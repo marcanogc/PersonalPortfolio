@@ -11,7 +11,7 @@ interface LanguageContextType {
 
 // Crear el contexto con valores por defecto
 export const LanguageContext = createContext<LanguageContextType>({
-  language: "es", // Español como idioma predeterminado
+  language: "pt", // Portugués como idioma predeterminado
   setLanguage: () => {},
 });
 
@@ -21,7 +21,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<Language>(() => {
     // Intentar obtener la preferencia de idioma del localStorage
     const savedLanguage = localStorage.getItem("language") as Language | null;
-    return savedLanguage || "es"; // Usar español como valor predeterminado
+    return savedLanguage || "pt"; // Usar portugués como valor predeterminado
   });
 
   // Guardar el idioma en localStorage cuando cambie
