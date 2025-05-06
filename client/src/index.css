@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 271 70% 46%; /* Toti purple */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 145 65% 49%; /* Toti green */
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 271 70% 46%;
+
+    --radius: 0.5rem;
+
+    --chart-1: 271 70% 46%;
+    --chart-2: 145 65% 49%;
+    --chart-3: 217 91% 60%;
+    --chart-4: 47 100% 50%;
+    --chart-5: 0 91% 71%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 271 70% 59%; /* Lighter purple for dark mode */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 145 65% 49%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 271 70% 59%;
+
+    --chart-1: 271 70% 59%;
+    --chart-2: 145 65% 55%;
+    --chart-3: 217 91% 65%;
+    --chart-4: 47 100% 55%;
+    --chart-5: 0 91% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+}
+
+/* BEM classes for custom components */
+.nav-link {
+  @apply relative py-2;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary dark:bg-primary transition-all duration-300;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  @apply w-full;
+}
+
+.project-card {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+}
+
+.experience-timeline__item {
+  @apply relative;
+}
+
+.experience-timeline__dot {
+  @apply absolute -left-12 w-8 h-8 bg-primary dark:bg-primary rounded-full flex items-center justify-center text-white;
+}
+
+.button {
+  @apply px-6 py-3 rounded-lg font-medium transition-colors;
+}
+
+.button--primary {
+  @apply bg-primary text-white hover:bg-primary/90;
+}
+
+.button--outline {
+  @apply border border-primary text-primary dark:text-primary dark:border-primary hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-black;
+}
+
+.badge {
+  @apply px-2 py-1 text-xs rounded-full;
+}
+
+.badge--tag {
+  @apply bg-gray-100 dark:bg-accent text-gray-600 dark:text-gray-400;
+}
+
+.badge--category {
+  @apply text-xs px-2 py-1 rounded-full;
+}
+
+.badge--web {
+  @apply bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200;
+}
+
+.badge--bi {
+  @apply bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200;
+}
+
+.badge--backend {
+  @apply bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200;
+}
+
+.badge--dados {
+  @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200;
+}
+
+.animate-on-scroll {
+  @apply opacity-0 translate-y-5 transition-all duration-500;
+}
+
+.animate-on-scroll.visible {
+  @apply opacity-100 translate-y-0;
+}
+
+/* Form elements */
+.form__input {
+  @apply w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-accent text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors;
+}
+
+.form__label {
+  @apply block text-sm font-medium mb-2;
+}
