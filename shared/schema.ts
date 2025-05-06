@@ -1,30 +1,30 @@
-import { pgTable, text, serial, integer, json, timestamp } from "drizzle-orm/pg-core";
+import { sqliteTable, text, integer, blob } from "drizzle-orm/sqlite-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
 // Project table
-export const projects = pgTable("projects", {
-  id: serial("id").primaryKey(),
+export const projects = sqliteTable("projects", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
   name: text("name").notNull(),
   description: text("description").notNull(),
   category: text("category").notNull(), // "web", "bi", "backend", "dados"
   imageUrl: text("image_url").notNull(),
-  technologies: json("technologies").$type<string[]>().notNull(),
+  technologies: text("technologies").notNull(), // SQLite doesn't have a native JSON type, so we'll stringify/parse
   githubUrl: text("github_url"),
   demoUrl: text("demo_url"),
   reportUrl: text("report_url"),
   docsUrl: text("docs_url"),
-  createdAt: timestamp("created_at").defaultNow().notNull()
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(Date.now)
 });
 
 // Contact table for storing contact form submissions
-export const contacts = pgTable("contacts", {
-  id: serial("id").primaryKey(),
+export const contacts = sqliteTable("contacts", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
   name: text("name").notNull(),
   email: text("email").notNull(),
   subject: text("subject"),
   message: text("message").notNull(),
-  createdAt: timestamp("created_at").defaultNow().notNull()
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(Date.now)
 });
 
 // Insert schemas with validation
@@ -35,8 +35,18 @@ export const projectInsertSchema = createInsertSchema(projects, {
     val => ["web", "bi", "backend", "dados"].includes(val), 
     "Category must be one of: web, bi, backend, dados"
   ),
-  technologies: (schema) => z.array(z.string()).min(1, "At least one technology is required")
-});
+  // Handling technologies as a stringified array
+  technologies: (schema) => z.string().transform((val) => {
+    try {
+      const parsed = JSON.parse(val);
+      return Array.isArray(parsed) ? parsed : [val];
+    } catch {
+      return [val];
+    }
+  })
+}).omit({ technologies: true }).merge(z.object({
+  technologies: z.array(z.string()).min(1, "At least one technology is required")
+}));
 
 export const contactInsertSchema = createInsertSchema(contacts, {
   name: (schema) => schema.min(2, "Name must be at least 2 characters"),
@@ -51,9 +61,9 @@ export type ProjectInsert = z.infer<typeof projectInsertSchema>;
 export type Contact = typeof contacts.$inferSelect;
 export type ContactInsert = z.infer<typeof contactInsertSchema>;
 
-// Auth-related schemas from original file, kept but not used for this portfolio project
-export const users = pgTable("users", {
-  id: serial("id").primaryKey(),
+// Auth-related schemas from original file, adapted for SQLite
+export const users = sqliteTable("users", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
   username: text("username").notNull().unique(),
   password: text("password").notNull(),
 });
