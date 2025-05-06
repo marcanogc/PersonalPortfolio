@@ -66,14 +66,29 @@ export const aboutTranslations: TranslationObject = {
     pt: "Sobre mim"
   },
   description: {
-    es: "Soy un desarrollador full stack apasionado por crear experiencias digitales que sean útiles y agradables. Con experiencia en tecnologías modernas de frontend y backend, me enfoco en construir soluciones escalables y accesibles.",
-    en: "I am a full stack developer passionate about creating digital experiences that are useful and enjoyable. With experience in modern frontend and backend technologies, I focus on building scalable and accessible solutions.",
-    pt: "Sou um desenvolvedor full stack apaixonado por criar experiências digitais que sejam úteis e agradáveis. Com experiência em tecnologias modernas de frontend e backend, me concentro em construir soluções escaláveis e acessíveis."
+    es: "Soy un desarrollador y analista de datos apasionado por crear soluciones digitales que marcan la diferencia. Con formación en ciencia de datos y 3 años de experiencia en desarrollo web, me especializo en traducir datos complejos en insights accionables y crear experiencias web atractivas.",
+    en: "I am a developer and data analyst passionate about creating digital solutions that make a difference. With a background in data science and 3 years of experience in web development, I specialize in translating complex data into actionable insights and creating engaging web experiences.",
+    pt: "Sou um desenvolvedor e analista de dados apaixonado por criar soluções digitais que fazem a diferença. Com formação em ciência de dados e 3 anos de experiência em desenvolvimento web, me especializo em traduzir dados complexos em insights acionáveis e criar experiências web atraentes."
+  },
+  journey: {
+    es: "Mi camino profesional comenzó en análisis de datos, donde aprendí a extraer valor de conjuntos de datos complejos. Ahora, estoy combinando estas habilidades con el desarrollo frontend para crear aplicaciones que no solo son técnicamente sólidas sino también centradas en el usuario.",
+    en: "My professional journey began in data analysis, where I learned to extract value from complex datasets. Now, I'm combining these skills with frontend development to create applications that are not only technically solid but also user-centered.",
+    pt: "Minha jornada profissional começou na análise de dados, onde aprendi a extrair valor de conjuntos de dados complexos. Agora, estou combinando essas habilidades com o desenvolvimento frontend para criar aplicativos que não são apenas tecnicamente sólidos, mas também centrados no usuário."
   },
   skills: {
     es: "Habilidades",
     en: "Skills",
     pt: "Habilidades"
+  },
+  downloadCV: {
+    es: "Descargar CV",
+    en: "Download CV",
+    pt: "Baixar CV"
+  },
+  personalInfo: {
+    es: "Datos Personales",
+    en: "Personal Information",
+    pt: "Informações Pessoais"
   }
 };
 
@@ -207,6 +222,11 @@ export const contactTranslations: TranslationObject = {
     en: "Send message",
     pt: "Enviar mensagem"
   },
+  sending: {
+    es: "Enviando",
+    en: "Sending",
+    pt: "Enviando"
+  },
   nameRequired: {
     es: "El nombre es obligatorio",
     en: "Name is required",
@@ -236,5 +256,15 @@ export const contactTranslations: TranslationObject = {
     es: "Hubo un error al enviar el mensaje. Inténtalo de nuevo.",
     en: "There was an error sending the message. Please try again.",
     pt: "Houve um erro ao enviar a mensagem. Por favor, tente novamente."
+  },
+  contactInfo: {
+    es: "Información de contacto",
+    en: "Contact information",
+    pt: "Informações de contato"
+  },
+  socialNetworks: {
+    es: "Sígueme en redes",
+    en: "Follow me on social media",
+    pt: "Siga-me nas redes sociais"
   }
 };
