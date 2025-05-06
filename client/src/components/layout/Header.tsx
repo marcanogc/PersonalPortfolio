@@ -1,23 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { LanguageSelector } from "@/components/ui/LanguageSelector";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MobileMenu } from "./MobileMenu";
+import { useTranslation } from "@/hooks/useLanguage";
+import { navTranslations } from "@/translations";
 
 interface NavItem {
   label: string;
   href: string;
+  key: string;
 }
 
-const navItems: NavItem[] = [
-  { label: "Sobre mí", href: "#about" },
-  { label: "Proyectos", href: "#projects" },
-  { label: "Experiencia", href: "#experience" },
-  { label: "Contacto", href: "#contact" },
-];
-
 export const Header = () => {
+  const { t, language } = useTranslation(navTranslations);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [navItems, setNavItems] = useState<NavItem[]>([]);
+  
+  // Actualizar los elementos de navegación cuando cambie el idioma
+  useEffect(() => {
+    setNavItems([
+      { label: t('about'), href: "#about", key: 'about' },
+      { label: t('projects'), href: "#projects", key: 'projects' },
+      { label: t('experience'), href: "#experience", key: 'experience' },
+      { label: t('contact'), href: "#contact", key: 'contact' },
+    ]);
+  }, [language, t]);
   
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -35,7 +44,7 @@ export const Header = () => {
         <nav className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
             <a 
-              key={item.href} 
+              key={item.key} 
               href={item.href} 
               className="nav-link"
             >
@@ -44,8 +53,11 @@ export const Header = () => {
           ))}
         </nav>
 
-        {/* Theme Toggle & Mobile Menu Button */}
+        {/* Theme Toggle, Language Selector & Mobile Menu Button */}
         <div className="flex items-center space-x-4">
+          <div className="hidden md:block">
+            <LanguageSelector />
+          </div>
           <ThemeToggle />
           
           <Button 
