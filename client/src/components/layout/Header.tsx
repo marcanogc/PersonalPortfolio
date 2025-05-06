@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LanguageSelector } from "@/components/ui/LanguageSelector";
 import { Menu } from "lucide-react";
@@ -16,17 +16,14 @@ interface NavItem {
 export const Header = () => {
   const { t, language } = useTranslation(navTranslations);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [navItems, setNavItems] = useState<NavItem[]>([]);
   
-  // Actualizar los elementos de navegación cuando cambie el idioma
-  useEffect(() => {
-    setNavItems([
-      { label: t('about'), href: "#about", key: 'about' },
-      { label: t('projects'), href: "#projects", key: 'projects' },
-      { label: t('experience'), href: "#experience", key: 'experience' },
-      { label: t('contact'), href: "#contact", key: 'contact' },
-    ]);
-  }, [language, t]);
+  // Crear los elementos de navegación directamente usando las traducciones
+  const navItems: NavItem[] = [
+    { label: t('about'), href: "#about", key: 'about' },
+    { label: t('projects'), href: "#projects", key: 'projects' },
+    { label: t('experience'), href: "#experience", key: 'experience' },
+    { label: t('contact'), href: "#contact", key: 'contact' },
+  ];
   
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);

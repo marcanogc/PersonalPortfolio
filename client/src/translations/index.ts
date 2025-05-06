@@ -50,6 +50,11 @@ export const heroTranslations: TranslationObject = {
     es: "Ver proyectos",
     en: "View projects",
     pt: "Ver projetos"
+  },
+  contact: {
+    es: "Contáctame",
+    en: "Contact me",
+    pt: "Contate-me"
   }
 };
 
@@ -79,6 +84,11 @@ export const projectsTranslations: TranslationObject = {
     en: "Projects",
     pt: "Projetos"
   },
+  description: {
+    es: "Una selección de mis trabajos más recientes y significativos en diferentes áreas de la tecnología.",
+    en: "A selection of my most recent and significant work in different areas of technology.",
+    pt: "Uma seleção dos meus trabalhos mais recentes e significativos em diferentes áreas da tecnologia."
+  },
   allCategories: {
     es: "Todos",
     en: "All",
@@ -103,6 +113,16 @@ export const projectsTranslations: TranslationObject = {
     es: "Datos",
     en: "Data",
     pt: "Dados"
+  },
+  loading: {
+    es: "Cargando proyectos...",
+    en: "Loading projects...",
+    pt: "Carregando projetos..."
+  },
+  error: {
+    es: "Error al cargar proyectos. Por favor, intenta nuevamente más tarde.",
+    en: "Error loading projects. Please try again later.",
+    pt: "Erro ao carregar projetos. Por favor, tente novamente mais tarde."
   },
   viewProject: {
     es: "Ver proyecto",
