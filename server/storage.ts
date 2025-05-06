@@ -1,5 +1,6 @@
 import { db } from "@db";
 import { projects, contacts, Project, Contact, ContactInsert } from "@shared/schema";
+import { eq, desc } from "drizzle-orm";
 
 // Contact form data type that matches our schema validation
 export interface ContactFormData {
@@ -9,14 +10,34 @@ export interface ContactFormData {
   message: string;
 }
 
+// Helper function to parse the technologies string to an array
+const parseTechnologies = (techs: string): string[] => {
+  try {
+    return JSON.parse(techs);
+  } catch (error) {
+    console.error("Error parsing technologies:", error);
+    return [];
+  }
+};
+
+// Helper to transform project data from SQLite (JSON strings) to the expected format
+const transformProject = (project: any): Project => {
+  if (!project) return project;
+  
+  return {
+    ...project,
+    technologies: parseTechnologies(project.technologies)
+  };
+};
+
 // Project related functions
 export const storage = {
   // Get all projects
   async getAllProjects(): Promise<Project[]> {
     try {
-      return await db.query.projects.findMany({
-        orderBy: (projects, { desc }) => [desc(projects.createdAt)]
-      });
+      const rawProjects = await db.select().from(projects).orderBy(desc(projects.createdAt));
+      // Transform technologies from JSON string to array
+      return rawProjects.map(transformProject);
     } catch (error) {
       console.error("Error fetching projects:", error);
       throw new Error("Failed to fetch projects");
@@ -30,10 +51,12 @@ export const storage = {
         return await this.getAllProjects();
       }
       
-      return await db.query.projects.findMany({
-        where: (projects, { eq }) => eq(projects.category, category),
-        orderBy: (projects, { desc }) => [desc(projects.createdAt)]
-      });
+      const rawProjects = await db.select()
+        .from(projects)
+        .where(eq(projects.category, category))
+        .orderBy(desc(projects.createdAt));
+      
+      return rawProjects.map(transformProject);
     } catch (error) {
       console.error(`Error fetching projects by category ${category}:`, error);
       throw new Error("Failed to fetch projects by category");
@@ -43,12 +66,16 @@ export const storage = {
   // Get a project by ID
   async getProjectById(id: number): Promise<Project | null> {
     try {
-      const project = await db.query.projects.findFirst({
-        where: (projects, { eq }) => eq(projects.id, id)
-      });
+      const rawProject = await db.select()
+        .from(projects)
+        .where(eq(projects.id, id))
+        .limit(1);
       
-      // Return null if project is undefined
-      return project || null;
+      // Return null if project is not found
+      if (!rawProject.length) return null;
+      
+      // Transform technologies from JSON string to array
+      return transformProject(rawProject[0]);
     } catch (error) {
       console.error(`Error fetching project with ID ${id}:`, error);
       throw new Error("Failed to fetch project");
@@ -67,9 +94,19 @@ export const storage = {
         ...(data.subject ? { subject: data.subject } : {})
       };
       
-      const [contact] = await db.insert(contacts).values(contactData).returning();
+      // For SQLite we need to handle createdAt differently
+      const result = await db.insert(contacts).values(contactData);
       
-      return contact;
+      // Get the last inserted row ID
+      const lastId = (result as any).lastInsertRowid;
+      
+      // Fetch the inserted contact
+      const contact = await db.select()
+        .from(contacts)
+        .where(eq(contacts.id, lastId))
+        .then(rows => rows[0]);
+      
+      return contact as Contact;
     } catch (error) {
       console.error("Error saving contact submission:", error);
       throw new Error("Failed to save contact submission");
