@@ -2,8 +2,11 @@ import { useProjects, ProjectCategory } from "@/hooks/useProjects";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/ui/ProjectCard";
 import { useEffect, useRef } from "react";
+import { useTranslation } from "@/hooks/useLanguage";
+import { projectsTranslations } from "@/translations";
 
 export const Projects = () => {
+  const { t } = useTranslation(projectsTranslations);
   const { 
     projects, 
     isLoading, 
@@ -14,6 +17,15 @@ export const Projects = () => {
   } = useProjects();
 
   const sectionRef = useRef<HTMLElement>(null);
+
+  // Mapeamos los IDs de categoría a las claves de traducción
+  const categoryToTranslationKey: Record<string, string> = {
+    'all': 'allCategories',
+    'web': 'web',
+    'bi': 'bi',
+    'backend': 'backend',
+    'dados': 'dados'
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -39,9 +51,9 @@ export const Projects = () => {
     <section id="projects" className="py-16 transition-colors animate-on-scroll" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold mb-4">Proyectos</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('title')}</h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Una selección de mis trabajos más recientes y significativos en diferentes áreas de la tecnología.
+            {t('description') || "Una selección de mis trabajos más recientes y significativos en diferentes áreas de la tecnología."}
           </p>
         </div>
 
@@ -58,7 +70,9 @@ export const Projects = () => {
                   : "bg-card text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-accent"
               }
             >
-              {category.label}
+              {categoryToTranslationKey[category.id] 
+                ? t(categoryToTranslationKey[category.id]) 
+                : category.label}
             </Button>
           ))}
         </div>
@@ -66,11 +80,11 @@ export const Projects = () => {
         {/* Project Grid */}
         {isLoading ? (
           <div className="text-center py-12">
-            <p>Cargando proyectos...</p>
+            <p>{t('loading') || "Cargando proyectos..."}</p>
           </div>
         ) : error ? (
           <div className="text-center py-12 text-red-500">
-            <p>Error al cargar proyectos. Por favor, intenta nuevamente más tarde.</p>
+            <p>{t('error') || "Error al cargar proyectos. Por favor, intenta nuevamente más tarde."}</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -1,23 +1,30 @@
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/hooks/useLanguage";
+import { heroTranslations } from "@/translations";
 
 export const Hero = () => {
+  const { t } = useTranslation(heroTranslations);
+
   return (
     <section id="hero" className="min-h-screen pt-24 flex items-center">
       <div className="container mx-auto px-4 py-16">
         <div className="flex flex-col md:flex-row md:items-center">
           <div className="md:w-1/2 animate-slide-in">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              <span className="text-primary dark:text-primary">João</span> Silva
+              <span className="text-primary dark:text-primary">{t('greeting')}</span> João Silva
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-700 dark:text-gray-300">
-              Desenvolvedor e analista de dados em transição
+              {t('role')}
+            </p>
+            <p className="text-lg mb-8 text-gray-600 dark:text-gray-400 max-w-lg">
+              {t('description')}
             </p>
             <div className="flex space-x-4">
               <a href="#contact" className="button button--primary">
-                Contactame
+                {t('contact')}
               </a>
               <a href="#projects" className="button button--outline">
-                Ver proyectos
+                {t('cta')}
               </a>
             </div>
           </div>
