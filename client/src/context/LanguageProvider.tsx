@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useEffect, useState } from "react";
+import React, { createContext, ReactNode, useState } from "react";
 
 // Definir los idiomas disponibles
 export type Language = "es" | "en" | "pt"; 
@@ -9,34 +9,30 @@ interface LanguageContextType {
   setLanguage: (language: Language) => void;
 }
 
+// Valor predeterminado
+const defaultLanguage = (): Language => {
+  const savedLanguage = localStorage.getItem("language") as Language | null;
+  return savedLanguage || "pt"; // Usar portugués como valor predeterminado
+};
+
 // Crear el contexto con valores por defecto
-export const LanguageContext = createContext<LanguageContextType>({
-  language: "pt", // Portugués como idioma predeterminado
-  setLanguage: () => {},
-});
+export const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 // Proveedor de contexto de idioma
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   // Estado para almacenar el idioma actual
-  const [language, setLanguage] = useState<Language>(() => {
-    // Intentar obtener la preferencia de idioma del localStorage
-    const savedLanguage = localStorage.getItem("language") as Language | null;
-    return savedLanguage || "pt"; // Usar portugués como valor predeterminado
-  });
+  const [language, setLanguageState] = useState<Language>(defaultLanguage());
 
-  // Guardar el idioma en localStorage cuando cambie
-  useEffect(() => {
-    localStorage.setItem("language", language);
-  }, [language]);
-
-  // Objeto de contexto
-  const contextValue: LanguageContextType = {
-    language,
-    setLanguage,
+  // Función para cambiar el idioma
+  const setLanguage = (newLanguage: Language) => {
+    if (language !== newLanguage) {
+      localStorage.setItem("language", newLanguage);
+      setLanguageState(newLanguage);
+    }
   };
 
   return (
-    <LanguageContext.Provider value={contextValue}>
+    <LanguageContext.Provider value={{ language, setLanguage }}>
       {children}
     </LanguageContext.Provider>
   );

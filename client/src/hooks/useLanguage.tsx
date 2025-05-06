@@ -1,14 +1,28 @@
-import { useContext } from "react";
-import { LanguageContext, Language } from "../context/LanguageProvider";
+// Definición de idiomas disponibles
+export type Language = "es" | "en" | "pt";
 
+// Función simple para obtener el idioma actual del localStorage
 export function useLanguage() {
-  const context = useContext(LanguageContext);
-  
-  if (!context) {
-    throw new Error("useLanguage debe usarse dentro de un LanguageProvider");
-  }
-  
-  return context;
+  // Obtener el idioma del localStorage o usar "pt" como valor predeterminado
+  const getLanguage = (): Language => {
+    const savedLanguage = localStorage.getItem("language") as Language | null;
+    return savedLanguage || "pt";
+  };
+
+  // Función para cambiar el idioma
+  const setLanguage = (newLanguage: Language) => {
+    const currentLanguage = getLanguage();
+    if (currentLanguage !== newLanguage) {
+      localStorage.setItem("language", newLanguage);
+      // Recarga la página para aplicar el nuevo idioma
+      window.location.reload();
+    }
+  };
+
+  return {
+    language: getLanguage(),
+    setLanguage
+  };
 }
 
 // Tipo para las traducciones de un componente
