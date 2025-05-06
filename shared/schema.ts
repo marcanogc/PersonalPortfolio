@@ -1,4 +1,5 @@
 import { sqliteTable, text, integer, blob } from "drizzle-orm/sqlite-core";
+import { sql } from "drizzle-orm";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -14,7 +15,7 @@ export const projects = sqliteTable("projects", {
   demoUrl: text("demo_url"),
   reportUrl: text("report_url"),
   docsUrl: text("docs_url"),
-  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(Date.now)
+  createdAt: integer("created_at").notNull().default(sql`(strftime('%s', 'now'))`)
 });
 
 // Contact table for storing contact form submissions
@@ -24,7 +25,7 @@ export const contacts = sqliteTable("contacts", {
   email: text("email").notNull(),
   subject: text("subject"),
   message: text("message").notNull(),
-  createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(Date.now)
+  createdAt: integer("created_at").notNull().default(sql`(strftime('%s', 'now'))`)
 });
 
 // Insert schemas with validation
