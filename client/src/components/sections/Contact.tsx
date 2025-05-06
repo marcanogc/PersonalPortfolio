@@ -5,6 +5,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { MapPin, Mail, Phone, Linkedin, Github, Twitter, FileCode } from "lucide-react";
 import { apiRequest } from "@/lib/queryClient";
+import { useTranslation } from "@/hooks/useLanguage";
+import { contactTranslations } from "@/translations";
 
 interface ContactFormData {
   name: string;
@@ -14,6 +16,7 @@ interface ContactFormData {
 }
 
 export const Contact = () => {
+  const { t } = useTranslation(contactTranslations);
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
@@ -32,10 +35,28 @@ export const Contact = () => {
     e.preventDefault();
     
     // Simple validation
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name) {
       toast({
-        title: "Campos requeridos",
-        description: "Por favor completa todos los campos obligatorios.",
+        title: t('nameRequired'),
+        description: t('nameRequired'),
+        variant: "destructive"
+      });
+      return;
+    }
+    
+    if (!formData.email) {
+      toast({
+        title: t('emailRequired'),
+        description: t('emailRequired'),
+        variant: "destructive"
+      });
+      return;
+    }
+    
+    if (!formData.message) {
+      toast({
+        title: t('messageRequired'),
+        description: t('messageRequired'),
         variant: "destructive"
       });
       return;
@@ -47,8 +68,8 @@ export const Contact = () => {
       await apiRequest("POST", "/api/contact", formData);
       
       toast({
-        title: "Mensaje enviado",
-        description: "Gracias por tu mensaje. Me pondré en contacto contigo pronto.",
+        title: t('success'),
+        description: t('success'),
       });
       
       // Reset form
@@ -60,8 +81,8 @@ export const Contact = () => {
       });
     } catch (error) {
       toast({
-        title: "Error",
-        description: "Hubo un problema al enviar tu mensaje. Por favor intenta nuevamente.",
+        title: t('error'),
+        description: t('error'),
         variant: "destructive"
       });
     } finally {
@@ -73,9 +94,9 @@ export const Contact = () => {
     <section id="contact" className="py-16 transition-colors animate-on-scroll">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Contacto</h2>
+          <h2 className="text-3xl font-bold mb-4">{t('title')}</h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            ¿Interesado en trabajar juntos? Completa el formulario y me pondré en contacto contigo lo antes posible.
+            {t('description')}
           </p>
         </div>
         
@@ -87,20 +108,20 @@ export const Contact = () => {
               onSubmit={handleSubmit}
             >
               <div className="mb-4">
-                <label htmlFor="name" className="form__label">Nombre</label>
+                <label htmlFor="name" className="form__label">{t('name')}</label>
                 <Input
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   className="form__input"
-                  placeholder="Tu nombre"
+                  placeholder={`${t('name')}...`}
                   required
                 />
               </div>
               
               <div className="mb-4">
-                <label htmlFor="email" className="form__label">Email</label>
+                <label htmlFor="email" className="form__label">{t('email')}</label>
                 <Input
                   id="email"
                   name="email"
@@ -108,25 +129,25 @@ export const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   className="form__input"
-                  placeholder="tu.email@ejemplo.com"
+                  placeholder="example@email.com"
                   required
                 />
               </div>
               
               <div className="mb-4">
-                <label htmlFor="subject" className="form__label">Asunto</label>
+                <label htmlFor="subject" className="form__label">{t('subject')}</label>
                 <Input
                   id="subject"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
                   className="form__input"
-                  placeholder="Asunto del mensaje"
+                  placeholder={`${t('subject')}...`}
                 />
               </div>
               
               <div className="mb-6">
-                <label htmlFor="message" className="form__label">Mensaje</label>
+                <label htmlFor="message" className="form__label">{t('message')}</label>
                 <Textarea
                   id="message"
                   name="message"
@@ -134,7 +155,7 @@ export const Contact = () => {
                   onChange={handleChange}
                   rows={5}
                   className="form__input"
-                  placeholder="Tu mensaje..."
+                  placeholder={`${t('message')}...`}
                   required
                 />
               </div>
@@ -144,7 +165,7 @@ export const Contact = () => {
                 className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 rounded-lg transition-colors"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Enviando..." : "Enviar mensaje"}
+                {isSubmitting ? `${t('sending')}...` : t('send')}
               </Button>
             </form>
           </div>
@@ -152,7 +173,7 @@ export const Contact = () => {
           {/* Contact Info */}
           <div>
             <div className="bg-card rounded-xl shadow-md p-6 mb-6 transition-colors">
-              <h3 className="text-xl font-bold mb-4">Información de contacto</h3>
+              <h3 className="text-xl font-bold mb-4">{t('contactInfo')}</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <MapPin className="text-primary dark:text-primary mt-1 w-6 h-6" />
@@ -170,7 +191,7 @@ export const Contact = () => {
             </div>
             
             <div className="bg-card rounded-xl shadow-md p-6 transition-colors">
-              <h3 className="text-xl font-bold mb-4">Sígueme en redes</h3>
+              <h3 className="text-xl font-bold mb-4">{t('socialNetworks')}</h3>
               <div className="flex space-x-6">
                 <a href="https://linkedin.com" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary text-2xl" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="w-6 h-6" />

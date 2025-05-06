@@ -1,4 +1,4 @@
-import { useProjects, ProjectCategory } from "@/hooks/useProjects";
+import { useProjects, ProjectCategory, Project } from "@/hooks/useProjects";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/ui/ProjectCard";
 import { useEffect, useRef } from "react";
@@ -88,7 +88,7 @@ export const Projects = () => {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
+            {projects.map((project: Project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
