@@ -1,5 +1,5 @@
 import React from "react";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useLanguage, Language } from "@/hooks/useLanguage";
 import { cn } from "@/lib/utils";
 
 interface FlagProps {
@@ -79,26 +79,39 @@ interface LanguageSelectorProps {
   className?: string;
 }
 
+// Función para cambiar directamente el idioma sin usar hooks React
+const changeLanguage = (lang: Language) => {
+  const currentLang = localStorage.getItem('language') as Language || 'pt';
+  
+  if (currentLang !== lang) {
+    localStorage.setItem('language', lang);
+    console.log(`Idioma cambiado a: ${lang}`);
+    // Recargar la página para aplicar el nuevo idioma
+    window.location.reload();
+  }
+};
+
 export const LanguageSelector = ({ className }: LanguageSelectorProps) => {
-  const { language, setLanguage } = useLanguage();
+  // Determinar qué idioma está actualmente seleccionado
+  const currentLang = localStorage.getItem('language') as Language || 'pt';
 
   return (
     <div className={cn("flex items-center gap-3", className)}>
       <BrazilFlag 
-        selected={language === "pt"} 
-        onClick={() => setLanguage("pt")} 
+        selected={currentLang === "pt"} 
+        onClick={() => changeLanguage("pt")} 
         title="Português"
         ariaLabel="Mudar para Português"
       />
       <SpainFlag 
-        selected={language === "es"} 
-        onClick={() => setLanguage("es")} 
+        selected={currentLang === "es"} 
+        onClick={() => changeLanguage("es")} 
         title="Español"
         ariaLabel="Cambiar a Español"
       />
       <USAFlag 
-        selected={language === "en"} 
-        onClick={() => setLanguage("en")} 
+        selected={currentLang === "en"} 
+        onClick={() => changeLanguage("en")} 
         title="English"
         ariaLabel="Switch to English"
       />
