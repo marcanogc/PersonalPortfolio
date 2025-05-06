@@ -1,11 +1,15 @@
 import { Project } from "@/hooks/useProjects";
 import { GithubIcon, ExternalLink, FileText, BookOpen } from "lucide-react";
+import { useTranslation } from "@/hooks/useLanguage";
+import { projectsTranslations } from "@/translations";
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
+  const { t } = useTranslation(projectsTranslations);
+  
   const {
     name,
     description,
@@ -18,6 +22,17 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
     docsUrl
   } = project;
 
+  // Obtener la etiqueta de categoría
+  const getCategoryLabel = (cat: string): string => {
+    switch (cat) {
+      case "web": return t('web');
+      case "bi": return t('bi');
+      case "backend": return t('backend');
+      case "dados": return t('dados');
+      default: return cat;
+    }
+  };
+
   return (
     <div className="project-card rounded-xl overflow-hidden bg-card shadow-md">
       <img 
@@ -29,10 +44,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         <div className="flex justify-between items-start mb-2">
           <h3 className="text-xl font-bold">{name}</h3>
           <span className={`badge--category badge--${category}`}>
-            {category === "web" && "Web"}
-            {category === "bi" && "BI"}
-            {category === "backend" && "Backend"}
-            {category === "dados" && "Dados"}
+            {getCategoryLabel(category)}
           </span>
         </div>
         <p className="text-gray-600 dark:text-gray-400 mb-4">{description}</p>
@@ -41,7 +53,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             <span key={index} className="badge badge--tag">{tech}</span>
           ))}
         </div>
-        <div className="flex space-x-4">
+        <div className="flex flex-wrap gap-3">
           {githubUrl && (
             <a 
               href={githubUrl} 
@@ -49,7 +61,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <GithubIcon className="w-4 h-4 mr-1" /> Código
+              <GithubIcon className="w-4 h-4 mr-1" /> {t('viewGithub')}
             </a>
           )}
           {demoUrl && (
@@ -59,7 +71,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <ExternalLink className="w-4 h-4 mr-1" /> Demo
+              <ExternalLink className="w-4 h-4 mr-1" /> {t('viewDemo')}
             </a>
           )}
           {reportUrl && (
@@ -69,7 +81,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FileText className="w-4 h-4 mr-1" /> Reporte
+              <FileText className="w-4 h-4 mr-1" /> {t('viewReport')}
             </a>
           )}
           {docsUrl && (
@@ -79,7 +91,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <BookOpen className="w-4 h-4 mr-1" /> Docs
+              <BookOpen className="w-4 h-4 mr-1" /> {t('viewDocs')}
             </a>
           )}
         </div>

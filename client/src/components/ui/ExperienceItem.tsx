@@ -1,4 +1,6 @@
 import { Briefcase, GraduationCap } from "lucide-react";
+import { useTranslation } from "@/hooks/useLanguage";
+import { experienceTranslations } from "@/translations";
 
 export interface ExperienceItemProps {
   title: string;
@@ -17,6 +19,11 @@ export const ExperienceItem = ({
   skills,
   type
 }: ExperienceItemProps) => {
+  const { t } = useTranslation(experienceTranslations);
+  
+  // Determinar la etiqueta para el tipo de experiencia
+  const typeLabel = type === "work" ? t('work') : t('education');
+  
   return (
     <div className="experience-timeline__item">
       <div className="experience-timeline__dot">
@@ -27,9 +34,12 @@ export const ExperienceItem = ({
         )}
       </div>
       <div className="bg-card rounded-xl shadow-md p-6 transition-colors">
-        <div className="flex flex-col md:flex-row justify-between mb-4">
+        <div className="flex flex-col md:flex-row justify-between mb-2">
           <h3 className="text-xl font-bold">{title}</h3>
           <span className="text-gray-500 dark:text-gray-400">{period}</span>
+        </div>
+        <div className="mb-2">
+          <span className="text-sm px-2 py-1 rounded-full bg-primary/10 text-primary">{typeLabel}</span>
         </div>
         <h4 className="text-lg font-medium text-primary dark:text-primary mb-2">{company}</h4>
         <p className="text-gray-600 dark:text-gray-400 mb-4">{description}</p>
