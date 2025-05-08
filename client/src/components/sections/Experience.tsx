@@ -14,26 +14,26 @@ export const Experience = () => {
     // Datos en español (default)
     const spanishData: ExperienceItemProps[] = [
       {
-        title: "Analista de Datos",
-        company: "Tech Solutions SA",
-        period: "2021 - Presente",
-        description: "Análisis de datos de clientes y creación de dashboards para toma de decisiones. Desarrollo de modelos predictivos para anticipar tendencias de mercado.",
+        title: " Analista Mayor de Planificación",
+        company: "Pdvsa S.A.",
+        period: "2012 - 2021",
+        description: "Elaboré informes ejecutivos y gráficos de indicadores clave, permitiendo una clara visualización del rendimiento semanal. Presenté la rendición de cuenta de gestión mensual, basando mis análisis en datos que respaldaban las decisiones estratégicas de la organización.",
         skills: ["Python", "SQL", "Power BI", "Excel"],
         type: "work"
       },
       {
-        title: "Desarrollador Frontend Jr.",
-        company: "Digital Innovations",
-        period: "2019 - 2021",
-        description: "Desarrollo de interfaces de usuario para aplicaciones web. Implementación de diseños responsivos y optimización de rendimiento en front-end.",
-        skills: ["JavaScript", "React", "CSS/SASS", "Git"],
+        title: "Analista de Sistemas Jr.",
+        company: "Puertos de Sucre S.A.",
+        period: "2010 - 2011",
+        description: "Desarrollé las interfaces de usuario y bases de datos para aplicaciones web. Implantación de sistemas front-end y back-end para el control de inventarios de la empresa Puertos de Sucre S.A.",
+        skills: ["PHP", "MySQL", "UML/OMT", "HTML/CSS"],
         type: "work"
       },
       {
-        title: "Licenciatura en Ciencias de la Computación",
-        company: "Universidad Nacional de Brasil",
-        period: "2015 - 2019",
-        description: "Especialización en análisis de datos y desarrollo de software. Proyecto final sobre implementación de algoritmos de machine learning para predicción de comportamiento de usuarios.",
+        title: "Ingeniero de Sistemas",
+        company: "Universidad Nacional de las Fuerzas Armadas de Venezuela",
+        period: "2005 - 2010",
+        description: "Especialización en ingeniería y desarrollo de software. Proyecto final de carrera sobre la implantación de un Sistema Full Stack para el Control de Inventarios.",
         type: "education"
       }
     ];
@@ -41,26 +41,26 @@ export const Experience = () => {
     // Datos en inglés
     const englishData: ExperienceItemProps[] = [
       {
-        title: "Data Analyst",
-        company: "Tech Solutions SA",
-        period: "2021 - Present",
-        description: "Customer data analysis and dashboard creation for decision making. Development of predictive models to anticipate market trends.",
+        title: " Senior Planning Analyst",
+        company: "Pdvsa S.A.",
+        period: "2012 - 2021",
+        description: "I prepared executive reports and graphs of key indicators, allowing a clear visualization of weekly performance. I presented the monthly management account, basing my analysis on data that supported strategic decisions in the organization.",
         skills: ["Python", "SQL", "Power BI", "Excel"],
         type: "work"
       },
       {
-        title: "Junior Frontend Developer",
-        company: "Digital Innovations",
+        title: " Systems Analyst Jr.",
+        company: "Ports of Sucre S.A.",
         period: "2019 - 2021",
-        description: "User interface development for web applications. Implementation of responsive designs and front-end performance optimization.",
-        skills: ["JavaScript", "React", "CSS/SASS", "Git"],
+        description: "Development of user interfaces and DataBase for web applications. Implementation of Front-End and Back-End Systems for Inventory Control of the company Ports of Sucre S.A.",
+        skills: ["PHP", "MySQL", "UML/OMT", "HTML/CSS"],
         type: "work"
       },
       {
-        title: "Bachelor's Degree in Computer Science",
-        company: "National University of Brazil",
+        title: "Bachelor's Degree in Systems Engineering",
+        company: "National University of the Armed Forces of Venezuela",
         period: "2015 - 2019",
-        description: "Specialization in data analysis and software development. Final project on implementation of machine learning algorithms for user behavior prediction.",
+        description: "Specialization in software engineering and development. Final project on the implementation of a Full Stack System for Inventory Control.",
         type: "education"
       }
     ];
@@ -68,26 +68,26 @@ export const Experience = () => {
     // Datos en portugués
     const portugueseData: ExperienceItemProps[] = [
       {
-        title: "Analista de Dados",
-        company: "Tech Solutions SA",
-        period: "2021 - Presente",
-        description: "Análise de dados de clientes e criação de dashboards para tomada de decisão. Desenvolvimento de modelos preditivos para antecipar tendências de mercado.",
+        title: "Analista de Planejamento Sênior",
+        company: "Pdvsa S.A.",
+        period: "2012 - 2021",
+        description: "Elaborei relatórios executivos e gráficos dos indicadores-chave, permitindo uma visualização clara do desempenho semanal. Apresentei a conta gerencial mensal,   fundamentando minhas análises em dados que apoiaram decisões estratégicas na organização.",
         skills: ["Python", "SQL", "Power BI", "Excel"],
         type: "work"
       },
       {
-        title: "Desenvolvedor Frontend Jr.",
-        company: "Digital Innovations",
-        period: "2019 - 2021",
-        description: "Desenvolvimento de interfaces de usuário para aplicações web. Implementação de designs responsivos e otimização de desempenho no front-end.",
-        skills: ["JavaScript", "React", "CSS/SASS", "Git"],
+        title: "Analista de Sistemas Jr.",
+        company: "Portos de Sucre S.A.",
+        period: "2010 - 2011",
+        description: "Desenvolvimento de interfaces de usuário e banco de dados para aplicações web. Implementação de Sistemas Front-End e Back-End para o Controle de Inventarios da Empresa Portos de Sucre S.A.",
+        skills: ["PHP", "MySQL", "UML/OMT", "HTML/CSS"],
         type: "work"
       },
       {
-        title: "Licenciatura em Ciência da Computação",
-        company: "Universidade Nacional do Brasil",
-        period: "2015 - 2019",
-        description: "Especialização em análise de dados e desenvolvimento de software. Projeto final sobre implementação de algoritmos de machine learning para predição de comportamento de usuários.",
+        title: "Bacharelado em Engenharia de Sistemas",
+        company: "Universidade Nacional das Forzas Armadas de Venezuela",
+        period: "2005 - 2010",
+        description: "Especialização em engenharia e desenvolvimento de software. Projeto final sobre implementação de Sistema Full Stack para o Controle de Inventarios.",
         type: "education"
       }
     ];

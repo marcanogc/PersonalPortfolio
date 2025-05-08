@@ -34,7 +34,7 @@ export const Header = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="text-xl font-bold text-primary dark:text-primary">
-          <span>João Silva</span>
+          <span></span>
         </div>
 
         {/* Desktop Navigation */}
