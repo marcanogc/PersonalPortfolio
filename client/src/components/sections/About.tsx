@@ -16,12 +16,12 @@ export const About = () => {
   const getDegree = () => {
     switch (language) {
       case 'en':
-        return "Bachelor's Degree in Computer Science";
+        return "System Engineer";
       case 'pt':
-        return "Licenciatura em Ciência da Computação";
+        return "Engenheiro de Sistemas";
       case 'es':
       default:
-        return "Licenciado en Ciencias de la Computación";
+        return "Ingeniero de Sistemas";
     }
   };
 
@@ -63,11 +63,11 @@ export const About = () => {
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <MapPin className="text-primary dark:text-primary mt-1 w-6 h-6" />
-                  <span className="ml-2 text-gray-700 dark:text-gray-300">São Paulo, Brasil</span>
+                  <span className="ml-2 text-gray-700 dark:text-gray-300">Rio Grande do Sul, Brasil</span>
                 </li>
                 <li className="flex items-start">
                   <Mail className="text-primary dark:text-primary mt-1 w-6 h-6" />
-                  <span className="ml-2 text-gray-700 dark:text-gray-300">joao.silva@email.com</span>
+                  <span className="ml-2 text-gray-700 dark:text-gray-300">marcanogc@gmail.com</span>
                 </li>
                 <li className="flex items-start">
                   <GraduationCap className="text-primary dark:text-primary mt-1 w-6 h-6" />
@@ -79,13 +79,13 @@ export const About = () => {
                 </li>
               </ul>
               <div className="mt-6 flex space-x-4">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary text-xl">
+                <a href="https://linkedin.com/in/gabriel-marcano" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary text-xl">
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary text-xl">
+                <a href="https://github.com/marcanogc" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary text-xl">
                   <Github className="w-5 h-5" />
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary text-xl">
+                <a href="https://x.com/gabriel_marcano" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary text-xl">
                   <Twitter className="w-5 h-5" />
                 </a>
               </div>

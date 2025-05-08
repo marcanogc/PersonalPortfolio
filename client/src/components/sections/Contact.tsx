@@ -177,15 +177,15 @@ export const Contact = () => {
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <MapPin className="text-primary dark:text-primary mt-1 w-6 h-6" />
-                  <span className="ml-2 text-gray-700 dark:text-gray-300">São Paulo, Brasil</span>
+                  <span className="ml-2 text-gray-700 dark:text-gray-300">Rio Grande do Sul, Brasil</span>
                 </li>
                 <li className="flex items-start">
                   <Mail className="text-primary dark:text-primary mt-1 w-6 h-6" />
-                  <span className="ml-2 text-gray-700 dark:text-gray-300">joao.silva@email.com</span>
+                  <span className="ml-2 text-gray-700 dark:text-gray-300">marcanogc@gmail.com</span>
                 </li>
                 <li className="flex items-start">
                   <Phone className="text-primary dark:text-primary mt-1 w-6 h-6" />
-                  <span className="ml-2 text-gray-700 dark:text-gray-300">+55 (11) 98765-4321</span>
+                  <span className="ml-2 text-gray-700 dark:text-gray-300">+55 (54) 99297-7691</span>
                 </li>
               </ul>
             </div>
@@ -193,22 +193,22 @@ export const Contact = () => {
             <div className="bg-card rounded-xl shadow-md p-6 transition-colors">
               <h3 className="text-xl font-bold mb-4">{t('socialNetworks')}</h3>
               <div className="flex space-x-6">
-                <a href="https://linkedin.com" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary text-2xl" target="_blank" rel="noopener noreferrer">
+                <a href="https://linkedin.com/in/gabriel-marcano" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary text-2xl" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="w-6 h-6" />
                 </a>
-                <a href="https://github.com" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary text-2xl" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/marcanogc" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary text-2xl" target="_blank" rel="noopener noreferrer">
                   <Github className="w-6 h-6" />
                 </a>
-                <a href="https://twitter.com" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary text-2xl" target="_blank" rel="noopener noreferrer">
+                <a href="https://x.com/gabriel_marcano" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary text-2xl" target="_blank" rel="noopener noreferrer">
                   <Twitter className="w-6 h-6" />
                 </a>
-                <a href="https://dev.to" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary text-2xl" target="_blank" rel="noopener noreferrer">
+                <a href="https://tree-whale-a25.notion.site/Gabriel-Marcano-16dbf5073b6980e184b3c38716fbaa5e" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary text-2xl" target="_blank" rel="noopener noreferrer">
                   <FileCode className="w-6 h-6" />
                 </a>
               </div>
               
               <img 
-                src="https://pixabay.com/get/gb63651436fd6b579b52fcef3964240ef779533a8bcd0d77431c0165b9ab5d93a1816536c8bf656ed3a52dd0704157d86387b02392c8fbe9b1507d285ffaac249_1280.jpg" 
+                src="https://cdn.pixabay.com/photo/2018/01/06/07/53/social-3064515_1280.jpg" 
                 alt="Developer workspace illustration" 
                 className="w-full h-auto rounded-lg mt-6" 
               />
