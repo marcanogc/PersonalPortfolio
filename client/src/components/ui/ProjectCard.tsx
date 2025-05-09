@@ -1,18 +1,30 @@
 import { Project } from "@/hooks/useProjects";
 import { GithubIcon, ExternalLink, FileText, BookOpen } from "lucide-react";
-import { useTranslation } from "@/hooks/useLanguage";
+import { useTranslation, useLanguage } from "@/hooks/useLanguage";
 import { projectsTranslations } from "@/translations";
 
+interface ProjectMultilang extends Project {
+  name_es?: string;
+  name_en?: string;
+  name_pt?: string;
+  description_es?: string;
+  description_en?: string;
+  description_pt?: string;
+}
+
 interface ProjectCardProps {
-  project: Project;
+  project: ProjectMultilang;
 }
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
   const { t } = useTranslation(projectsTranslations);
-  
+  const { language } = useLanguage();
+
+  // Elegir el nombre y descripción según el idioma
+  const name = project[`name_${language}`] || project.name;
+  const description = project[`description_${language}`] || project.description;
+
   const {
-    name,
-    description,
     category,
     imageUrl,
     technologies,
