@@ -21,10 +21,9 @@ export const Projects = () => {
   // Mapeamos los IDs de categoría a las claves de traducción
   const categoryToTranslationKey: Record<string, string> = {
     'all': 'allCategories',
-    'web': 'web',
+    'fullstack': 'fullstack',
     'bi': 'bi',
-    'backend': 'backend',
-    'dados': 'dados'
+    'data': 'data'
   };
 
   useEffect(() => {
@@ -59,22 +58,24 @@ export const Projects = () => {
 
         {/* Project Filters */}
         <div className="mb-8 flex flex-wrap justify-center gap-4">
-          {categories.map(category => (
-            <Button
-              key={category.id}
-              onClick={() => setCurrentCategory(category.id as ProjectCategory)}
-              variant={currentCategory === category.id ? "default" : "outline"}
-              className={
-                currentCategory === category.id
-                  ? "bg-primary text-white"
-                  : "bg-card text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-accent"
-              }
-            >
-              {categoryToTranslationKey[category.id] 
-                ? t(categoryToTranslationKey[category.id]) 
-                : category.label}
-            </Button>
-          ))}
+          {categories
+            .filter(category => ['all', 'fullstack', 'bi', 'data'].includes(category.id))
+            .map(category => (
+              <Button
+                key={category.id}
+                onClick={() => setCurrentCategory(category.id as ProjectCategory)}
+                variant={currentCategory === category.id ? "default" : "outline"}
+                className={
+                  currentCategory === category.id
+                    ? "bg-primary text-white"
+                    : "bg-card text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-accent"
+                }
+              >
+                {categoryToTranslationKey[category.id] 
+                  ? t(categoryToTranslationKey[category.id]) 
+                  : (typeof category.label === 'string' ? category.label : category.label["en"])}
+              </Button>
+            ))}
         </div>
 
         {/* Project Grid */}

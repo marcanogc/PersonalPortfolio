@@ -109,22 +109,17 @@ export const projectsTranslations: TranslationObject = {
     en: "All",
     pt: "Todos"
   },
-  web: {
-    es: "Web",
-    en: "Web",
-    pt: "Web"
+  fullstack: {
+    es: "Fullstack",
+    en: "Fullstack",
+    pt: "Fullstack"
   },
   bi: {
     es: "BI",
     en: "BI",
     pt: "BI"
   },
-  backend: {
-    es: "Backend",
-    en: "Backend",
-    pt: "Backend"
-  },
-  dados: {
+  data: {
     es: "Datos",
     en: "Data",
     pt: "Dados"

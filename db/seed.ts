@@ -1,121 +1,118 @@
 import { db } from "./index";
-import { Pool } from '@neondatabase/serverless';
 import { projects } from "@shared/schema";
 
 async function seed() {
   try {
     console.log("🌱 Starting to seed database...");
 
-    // Check if projects already exist to avoid duplicates
+    // Check existing projects
     const existingProjects = await db.query.projects.findMany();
-    
     if (existingProjects.length > 0) {
-      console.log(`Found ${existingProjects.length} existing projects. Skipping seeding.`);
+      console.log(`⏩ Found ${existingProjects.length} existing projects. Skipping seeding.`);
       return;
     }
 
-    // Seed project data
+    // Proyectos actualizados
     const projectsData = [
       {
-        name: "Dashboard Analítico",
-        description: "Dashboard interativo para visualização de métricas de vendas e desempenho comercial.",
-        name_es: "Dashboard Analítico",
-        name_en: "Analytical Dashboard",
-        name_pt: "Dashboard Analítico",
-        description_es: "Dashboard interactivo para visualización de métricas de ventas y rendimiento comercial.",
-        description_en: "Interactive dashboard for visualizing sales metrics and business performance.",
-        description_pt: "Dashboard interativo para visualização de métricas de vendas e desempenho comercial.",
-        category: "web",
-        imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
-        technologies: ["React", "Chart.js", "Tailwind"],
-        githubUrl: "https://github.com/example/dashboard",
-        demoUrl: "https://example.com/dashboard-demo"
+        name: "Análise de Market Basket Analysis",
+        description: "Segmentação comportamental para estratégias de upsell. Impacto: +22% retenção de clientes | +10% vendas recorrentes",
+        name_es: "Análisis de Market Basket",
+        name_en: "Market Basket Analysis",
+        name_pt: "Análise de Market Basket Analysis",
+        description_es: "Segmentación conductual para estrategias de upsell. Impacto: +22% retención de clientes | +10% ventas recurrentes",
+        description_en: "Behavioral segmentation for upsell strategies. Impact: +22% customer retention | +10% recurring sales",
+        description_pt: "Segmentação comportamental para estratégias de upsell. Impacto: +22% retenção de clientes | +10% vendas recorrentes",
+        category: "data",
+        imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+        technologies: ["Python", "Machine Learning", "SQL", "Power BI"],
+        githubUrl: "https://github.com/marcanogc/Recuperacao-de-Clientes-com-Market-Basket-Analysis",
+        reportUrl: "https://www.notion.so/An-lise-de-Dados-com-a-Metodologia-de-Market-Basket-Analysis-188bf5073b6980009a8dfe21ec119f9a"
       },
       {
-        name: "Relatório de Vendas",
-        description: "Relatório interativo em Power BI para análise de vendas e tendências de mercado.",
-        name_es: "Reporte de Ventas",
-        name_en: "Sales Report",
-        name_pt: "Relatório de Vendas",
-        description_es: "Informe interactivo en Power BI para análisis de ventas y tendencias de mercado.",
-        description_en: "Interactive Power BI report for sales analysis and market trends.",
-        description_pt: "Relatório interativo em Power BI para análise de vendas e tendências de mercado.",
+        name: "Otimização Logística Data-Driven",
+        description: "Dashboard executivo com alertas em tempo real. Insight Chave: 65% dos atrasos ocorrem em janelas de alta pressão psicológica. Impacto: 40% aumento na satisfação de entregadores",
+        name_es: "Optimización Logística Data-Driven",
+        name_en: "Data-Driven Logistics Optimization",
+        name_pt: "Otimização Logística Data-Driven",
+        description_es: "Panel ejecutivo con alertas en tiempo real. Insight clave: 65% de los retrasos ocurren en ventanas de alta presión psicológica. Impacto: 40% aumento en satisfacción de repartidores",
+        description_en: "Executive dashboard with real-time alerts. Key insight: 65% of delays occur in high psychological pressure windows. Impact: 40% increase in delivery personnel satisfaction",
+        description_pt: "Dashboard executivo com alertas em tempo real. Insight Chave: 65% dos atrasos ocorrem em janelas de alta pressão psicológica. Impacto: 40% aumento na satisfação de entregadores",
         category: "bi",
-        imageUrl: "https://images.unsplash.com/photo-1489844097929-c8d5b91c456e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
-        technologies: ["Power BI", "DAX", "SQL"],
-        reportUrl: "https://example.com/report.pdf",
-        demoUrl: "https://example.com/bi-demo"
+        imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+        technologies: ["Airflow", "MySQL", "Python", "Tableau"],
+        githubUrl: "",
+        demoUrl: "https://www.notion.so/16dbf5073b698001ac37df0757033f87"
       },
       {
-        name: "API de E-commerce",
-        description: "API REST completa para gestão de produtos, usuários e pedidos em e-commerce.",
-        name_es: "API de E-commerce",
-        name_en: "E-commerce API",
-        name_pt: "API de E-commerce",
-        description_es: "API REST completa para gestión de productos, usuarios y pedidos en e-commerce.",
-        description_en: "Full REST API for managing products, users, and orders in e-commerce.",
-        description_pt: "API REST completa para gestão de produtos, usuários e pedidos em e-commerce.",
-        category: "backend",
-        imageUrl: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
-        technologies: ["Node.js", "Express", "MongoDB"],
-        githubUrl: "https://github.com/example/ecommerce-api",
-        docsUrl: "https://example.com/api-docs"
+        name: "Pipeline ETL para Dados Bitcoin em Python",
+        description: "Automação da coleta e armazenamento de preços do Bitcoin em tempo real. Insight Chave: 89% dos picos de compra seguem manchetes positivas. Impacto: Alertas preventivos para traders impulsivos",
+        name_es: "Pipeline ETL para Datos Bitcoin en Python",
+        name_en: "Bitcoin Data ETL Pipeline in Python",
+        name_pt: "Pipeline ETL para Dados Bitcoin em Python",
+        description_es: "Automatización de recolección y almacenamiento de precios de Bitcoin en tiempo real. Insight clave: 89% de los picos de compra siguen titulares positivos. Impacto: Alertas preventivos para traders impulsivos",
+        description_en: "Automation of real-time Bitcoin price collection and storage. Key insight: 89% of buying spikes follow positive headlines. Impact: Preventive alerts for impulsive traders",
+        description_pt: "Automação da coleta e armazenamento de preços do Bitcoin em tempo real. Insight Chave: 89% dos picos de compra seguem manchetes positivas. Impacto: Alertas preventivos para traders impulsivos",
+        category: "data",
+        imageUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485",
+        technologies: ["Python", "Pandas", "SQLAlchemy", "Coinbase API", "Streamlit"],
+        githubUrl: "https://github.com/marcanogc/ETLProjectAPIExtract",
+        demoUrl: ""
       },
       {
-        name: "Análise Preditiva",
-        description: "Modelo de ML para prever o comportamento do cliente com base no histórico de compras.",
-        name_es: "Análisis Predictivo",
-        name_en: "Predictive Analysis",
-        name_pt: "Análise Preditiva",
-        description_es: "Modelo de ML para predecir comportamiento de clientes basado en históricos de compra.",
-        description_en: "ML model to predict customer behavior based on purchase history.",
-        description_pt: "Modelo de ML para prever o comportamento do cliente com base no histórico de compras.",
-        category: "dados",
-        imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
-        technologies: ["Python", "Pandas", "Scikit-learn"],
-        githubUrl: "https://github.com/example/predictive-model",
-        reportUrl: "https://example.com/analysis-report.pdf"
+        name: "Plataforma de Gestão Educacional FullStack",
+        description: "Sistema completo para gestão de instituições educacionais com autenticação JWT, dashboard administrativo e relatórios personalizados",
+        name_es: "Plataforma de Gestión Educativa FullStack",
+        name_en: "Educational Management FullStack Platform",
+        name_pt: "Plataforma de Gestão Educacional FullStack",
+        description_es: "Sistema completo para gestión de instituciones educativas con autenticación JWT, panel administrativo y reportes personalizados",
+        description_en: "Complete system for educational institutions management with JWT authentication, admin dashboard and custom reports",
+        description_pt: "Sistema completo para gestão de instituições educacionais com autenticação JWT, dashboard administrativo e relatórios personalizados",
+        category: "fullstack",
+        imageUrl: "https://images.unsplash.com/photo-1588072432836-e10032774350",
+        technologies: ["Node.js", "Express", "React", "PostgreSQL", "JWT", "Material-UI"],
+        githubUrl: "",
+        demoUrl: ""
       },
       {
-        name: "Reserva App",
-        description: "Aplicativo para gerenciar reservas em restaurantes com sistema de notificações.",
-        name_es: "Reserva App",
-        name_en: "Reservation App",
-        name_pt: "Reserva App",
-        description_es: "Aplicación para gestionar reservas en restaurantes con sistema de notificaciones.",
-        description_en: "App to manage restaurant reservations with notification system.",
-        description_pt: "Aplicativo para gerenciar reservas em restaurantes com sistema de notificações.",
-        category: "web",
-        imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
-        technologies: ["React", "Firebase", "CSS BEM"],
-        githubUrl: "https://github.com/example/reserva-app",
-        demoUrl: "https://example.com/reserva-demo"
+        name: "Sistema de Recomendação em Data Science",
+        description: "Sistema de recomendação utilizando métricas de similaridade para recomendar co-proprietários de propriedades com base nas características dos usuários",
+        name_es: "Sistema de Recomendación en Data Science",
+        name_en: "Data Science Recommendation System",
+        name_pt: "Sistema de Recomendação em Data Science",
+        description_es: "Sistema de recomendación utilizando métricas de similitud para recomendar copropietarios de propiedades basado en características de usuarios",
+        description_en: "Recommendation system using similarity metrics to recommend property co-owners based on user characteristics",
+        description_pt: "Sistema de recomendação utilizando métricas de similaridade para recomendar co-proprietários de propriedades com base nas características dos usuários",
+        category: "data",
+        imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+        technologies: ["Python", "Pandas", "Scikit-learn", "Flask", "Matplotlib"],
+        githubUrl: "https://github.com/marcanogc/Projeto_DS_Sistema_de_Recomendacao_Python",
+        demoUrl: ""
       },
       {
-        name: "Marketing Analytics",
-        description: "Dashboard para análise de campanhas publicitárias e retorno sobre investimento.",
-        name_es: "Marketing Analytics",
-        name_en: "Marketing Analytics",
-        name_pt: "Marketing Analytics",
-        description_es: "Dashboard para análisis de campañas publicitarias y retorno de inversión.",
-        description_en: "Dashboard for analyzing advertising campaigns and ROI.",
-        description_pt: "Dashboard para análise de campanhas publicitárias e retorno sobre investimento.",
-        category: "bi",
-        imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500",
-        technologies: ["Power BI", "Google Analytics", "Excel"],
-        reportUrl: "https://example.com/marketing-report.pdf",
-        demoUrl: "https://example.com/marketing-demo"
+        name: "Sistema de Cadastro FullStack com Autenticação",
+        description: "Aplicação completa com frontend React, backend Node.js/Express e banco de dados PostgreSQL para cadastro de usuários com autenticação JWT e validação de documentos",
+        name_es: "Sistema de Registro FullStack con Autenticación",
+        name_en: "FullStack Registration System with Authentication",
+        name_pt: "Sistema de Cadastro FullStack com Autenticação",
+        description_es: "Aplicación completa con frontend React, backend Node.js/Express y base de datos PostgreSQL para registro de usuarios con autenticación JWT y validación de documentos",
+        description_en: "Complete application with React frontend, Node.js/Express backend and PostgreSQL database for user registration with JWT authentication and document validation",
+        description_pt: "Aplicação completa com frontend React, backend Node.js/Express e banco de dados PostgreSQL para cadastro de usuários com autenticação JWT e validação de documentos",
+        category: "fullstack",
+        imageUrl: "https://images.unsplash.com/photo-1551650975-87deedd944c3",
+        technologies: ["React", "Node.js", "Express", "PostgreSQL", "JWT", "ViaCEP API", "CPF Validation"],
+        githubUrl: "https://github.com/marcanogc/cadastro",
+        demoUrl: ""
       }
     ];
 
-    // Insert projects into the database
+    // Insert projects
     await db.insert(projects).values(projectsData);
-    
     console.log(`✅ Successfully seeded ${projectsData.length} projects.`);
   } catch (error) {
     console.error("❌ Error seeding database:", error);
+    throw error;
   }
-  // We don't need to close the connection as it's managed by the app
 }
 
 seed();
