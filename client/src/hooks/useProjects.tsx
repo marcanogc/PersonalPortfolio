@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 
-export type ProjectCategory = "web" | "bi" | "backend" | "dados" | "all";
+export type ProjectCategory = "fullstack" | "bi" | "data" | "all";
 
 export interface Project {
   id: number;
@@ -19,7 +19,7 @@ export interface Project {
 export function useProjects() {
   const [currentCategory, setCurrentCategory] = useState<ProjectCategory>("all");
   
-  const { data: projects = [], isLoading, error } = useQuery({
+  const { data: projects = [], isLoading, error } = useQuery<Project[]>({
     queryKey: ['/api/projects'],
   });
   
@@ -28,11 +28,10 @@ export function useProjects() {
   );
 
   const categories = [
-    { id: "all", label: "Todos" },
-    { id: "web", label: "Web" },
-    { id: "bi", label: "BI" },
-    { id: "backend", label: "Backend" },
-    { id: "dados", label: "Dados" }
+    { id: "all", label: { es: "Todos", en: "All", pt: "Todos" } },
+    { id: "fullstack", label: { es: "Fullstack", en: "Fullstack", pt: "Fullstack" } },
+    { id: "bi", label: { es: "BI", en: "BI", pt: "BI" } },
+    { id: "data", label: { es: "Datos", en: "Data", pt: "Dados" } }
   ];
 
   return {
@@ -42,6 +41,6 @@ export function useProjects() {
     error,
     currentCategory,
     setCurrentCategory,
-    categories
+    categories,
   };
 }
