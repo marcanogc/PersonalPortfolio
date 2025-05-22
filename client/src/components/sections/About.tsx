@@ -56,6 +56,18 @@ export const About = () => {
             >
               <FileText className="mr-2 h-4 w-4" /> {t('downloadCV')}
             </a>
+            {/* Botón para historia personal */}
+            <a
+              href="https://tree-whale-a25.notion.site/Gabriel-Marcano-16dbf5073b6980e184b3c38716fbaa5e"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors ml-4 mt-4"
+            >
+              {/* Puedes usar un ícono diferente si lo deseas */}
+              <FileText className="mr-2 h-4 w-4" />
+              {/* Traducción del botón */}
+              {language === 'es' ? 'Conoce mi historia' : language === 'en' ? 'Read my story' : 'Conheça minha história'}
+            </a>
           </div>
           <div className="md:col-span-1">
             <div className="bg-card rounded-xl shadow-md p-6 transition-colors">

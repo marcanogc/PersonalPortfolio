@@ -37,9 +37,9 @@ export const heroTranslations: TranslationObject = {
     pt: "Olá, sou"
   },
   role: {
-    es: "Desarrollador Full Stack",
-    en: "Full Stack Developer",
-    pt: "Desenvolvedor Full Stack"
+    es: "Desarrollador Full Stack y Analista de Datos",
+    en: "Full Stack Developer & Data Analyst",
+    pt: "Desenvolvedor Full Stack e Data Analyst"
   },
   description: {
     es: "Creo soluciones digitales impactantes y funcionales que combinan diseño atractivo con código de calidad.",
@@ -66,14 +66,14 @@ export const aboutTranslations: TranslationObject = {
     pt: "Sobre mim"
   },
   description: {
-    es: "Soy un desarrollador y analista de datos apasionado por crear soluciones digitales que marcan la diferencia. Con formación en ciencia de datos y 3 años de experiencia en desarrollo web, me especializo en traducir datos complejos en insights accionables y crear experiencias web atractivas.",
-    en: "I am a developer and data analyst passionate about creating digital solutions that make a difference. With a background in data science and 3 years of experience in web development, I specialize in translating complex data into actionable insights and creating engaging web experiences.",
-    pt: "Sou um desenvolvedor e analista de dados apaixonado por criar soluções digitais que fazem a diferença. Com formação em ciência de dados e 3 anos de experiência em desenvolvimento web, me especializo em traduzir dados complexos em insights acionáveis e criar experiências web atraentes."
+    es: "Soy un desarrollador y analista de datos apasionado por crear soluciones digitales que marcan la diferencia. Me especializo en transformar ideas en productos funcionales y atractivos, combinando habilidades técnicas con una visión estratégica.",
+    en: "I am a developer and data analyst passionate about creating digital solutions that make a difference. I specialize in turning ideas into functional and attractive products, combining technical skills with a strategic vision.",
+    pt: "Sou um desenvolvedor e analista de dados apaixonado por criar soluções digitais que fazem a diferença. Especialista em transformar ideias em produtos funcionais e atraentes, combinando habilidades técnicas com visão estratégica."
   },
   journey: {
-    es: "Mi camino profesional comenzó en análisis de datos, donde aprendí a extraer valor de conjuntos de datos complejos. Ahora, estoy combinando estas habilidades con el desarrollo frontend para crear aplicaciones que no solo son técnicamente sólidas sino también centradas en el usuario.",
-    en: "My professional journey began in data analysis, where I learned to extract value from complex datasets. Now, I'm combining these skills with frontend development to create applications that are not only technically solid but also user-centered.",
-    pt: "Minha jornada profissional começou na análise de dados, onde aprendi a extrair valor de conjuntos de dados complexos. Agora, estou combinando essas habilidades com o desenvolvimento frontend para criar aplicativos que não são apenas tecnicamente sólidos, mas também centrados no usuário."
+    es: "Mi camino profesional comenzó en el análisis de datos, donde aprendí a extraer valor de la información y a tomar decisiones basadas en evidencia. Hoy combino esa visión analítica con el desarrollo de software para crear productos que resuelven problemas reales.",
+    en: "My professional journey began in data analysis, where I learned to extract value from information and make evidence-based decisions. Today, I combine that analytical vision with software development to create products that solve real problems.",
+    pt: "Minha jornada profissional começou na análise de dados, onde aprendi a extrair valor das informações e tomar decisões baseadas em evidências. Hoje, combino essa visão analítica com o desenvolvimento de software para criar produtos que resolvem problemas reais."
   },
   skills: {
     es: "Habilidades",
@@ -89,6 +89,11 @@ export const aboutTranslations: TranslationObject = {
     es: "Datos Personales",
     en: "Personal Information",
     pt: "Informações Pessoais"
+  },
+  aboutMeLink: {
+    es: "Conoce mi historia",
+    en: "Read my story",
+    pt: "Conheça minha história"
   }
 };
 
