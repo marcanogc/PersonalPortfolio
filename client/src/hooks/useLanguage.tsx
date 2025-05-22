@@ -47,5 +47,12 @@ export function useTranslation(translations: TranslationObject) {
     return translations[key][language];
   };
   
-  return { t, language };
+  // Traducción para el botón de historia personal
+  const storyTranslations = {
+    es: "Conoce mi historia",
+    en: "Read my story",
+    pt: "Conheça minha história"
+  };
+
+  return { t, language, storyTranslations };
 }
