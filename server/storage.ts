@@ -61,6 +61,9 @@ export const storage = {
   // Contact form related functions
   async saveContactSubmission(data: ContactFormData): Promise<Contact> {
     try {
+      // Log de los datos recibidos para depuración
+      console.log('Datos recibidos en /api/contact:', data);
+
       // Create a valid contact object matching our ContactInsert type
       const contactData: ContactInsert = {
         name: data.name,
@@ -72,17 +75,25 @@ export const storage = {
       
       const [contact] = await db.insert(contacts).values(contactData).returning();
 
-      // Enviar email usando Resend
-      await resend.emails.send({
-        from: 'onboarding@resend.dev',
-        to: 'marcanogc@gmail.com',
+      // Enviar email usando Resend y loguear la respuesta
+      const emailResponse = await resend.emails.send({
+        from: 'Contacto desde Portafolio <onboarding@resend.dev>',
+        to: ['marcanogc@gmail.com'],
         subject: `Nuevo mensaje de contacto: ${data.subject || 'Sin asunto'}`,
         html: `<b>Nombre:</b> ${data.name}<br/><b>Email:</b> ${data.email}<br/><b>Mensaje:</b> ${data.message.replace(/\n/g, '<br/>')}`
       });
+      console.log('Resend email response:', emailResponse);
 
       return contact;
-    } catch (error) {
+    } catch (error: any) {
+      // Log detallado de error de validación
+      if (error && error.errors) {
+        console.error('Errores de validación:', error.errors);
+      }
       console.error("Error saving contact submission or sending email:", error);
+      if (error instanceof Error && error.stack) {
+        console.error("Stack trace:", error.stack);
+      }
       throw new Error("Failed to save contact submission or send email");
     }
   }
