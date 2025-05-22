@@ -13,6 +13,7 @@ async function seed() {
     }
 
     // Proyectos actualizados
+    const now = new Date().toISOString();
     const projectsData = [
       {
         name: "Análise de Market Basket Analysis",
@@ -27,7 +28,8 @@ async function seed() {
         imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
         technologies: ["Python", "Machine Learning", "SQL", "Power BI"],
         githubUrl: "https://github.com/marcanogc/Recuperacao-de-Clientes-com-Market-Basket-Analysis",
-        reportUrl: "https://www.notion.so/An-lise-de-Dados-com-a-Metodologia-de-Market-Basket-Analysis-188bf5073b6980009a8dfe21ec119f9a"
+        reportUrl: "https://www.notion.so/An-lise-de-Dados-com-a-Metodologia-de-Market-Basket-Analysis-188bf5073b6980009a8dfe21ec119f9a",
+        createdAt: now
       },
       {
         name: "Otimização Logística Data-Driven",
@@ -42,7 +44,8 @@ async function seed() {
         imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
         technologies: ["Airflow", "MySQL", "Python", "Tableau"],
         githubUrl: "",
-        demoUrl: "https://www.notion.so/16dbf5073b698001ac37df0757033f87"
+        demoUrl: "https://www.notion.so/16dbf5073b698001ac37df0757033f87",
+        createdAt: now
       },
       {
         name: "Pipeline ETL para Dados Bitcoin em Python",
@@ -57,7 +60,8 @@ async function seed() {
         imageUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485",
         technologies: ["Python", "Pandas", "SQLAlchemy", "Coinbase API", "Streamlit"],
         githubUrl: "https://github.com/marcanogc/ETLProjectAPIExtract",
-        demoUrl: ""
+        demoUrl: "",
+        createdAt: now
       },
       {
         name: "Plataforma de Gestão Educacional FullStack",
@@ -65,14 +69,15 @@ async function seed() {
         name_es: "Plataforma de Gestión Educativa FullStack",
         name_en: "Educational Management FullStack Platform",
         name_pt: "Plataforma de Gestão Educacional FullStack",
-        description_es: "Sistema completo para gestión de instituciones educativas con autenticación JWT, panel administrativo y reportes personalizados",
+        description_es: "Sistema completo para gestión de instituciones educativas con autenticación JWT, panel administrativo e informes personalizados",
         description_en: "Complete system for educational institutions management with JWT authentication, admin dashboard and custom reports",
         description_pt: "Sistema completo para gestão de instituições educacionais com autenticação JWT, dashboard administrativo e relatórios personalizados",
         category: "fullstack",
         imageUrl: "https://images.unsplash.com/photo-1588072432836-e10032774350",
         technologies: ["Node.js", "Express", "React", "PostgreSQL", "JWT", "Material-UI"],
         githubUrl: "",
-        demoUrl: ""
+        demoUrl: "",
+        createdAt: now
       },
       {
         name: "Sistema de Recomendação em Data Science",
@@ -87,7 +92,8 @@ async function seed() {
         imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
         technologies: ["Python", "Pandas", "Scikit-learn", "Flask", "Matplotlib"],
         githubUrl: "https://github.com/marcanogc/Projeto_DS_Sistema_de_Recomendacao_Python",
-        demoUrl: ""
+        demoUrl: "",
+        createdAt: now
       },
       {
         name: "Sistema de Cadastro FullStack com Autenticação",
@@ -102,7 +108,8 @@ async function seed() {
         imageUrl: "https://images.unsplash.com/photo-1551650975-87deedd944c3",
         technologies: ["React", "Node.js", "Express", "PostgreSQL", "JWT", "ViaCEP API", "CPF Validation"],
         githubUrl: "https://github.com/marcanogc/cadastro",
-        demoUrl: ""
+        demoUrl: "",
+        createdAt: now
       }
     ];
 
