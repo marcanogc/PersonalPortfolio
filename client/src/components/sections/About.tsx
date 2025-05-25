@@ -9,8 +9,8 @@ export const About = () => {
 
   // Personalizar contenido según el idioma
   const getSkills = () => [
-    "JavaScript", "React", "Node.js", "Express", "Python", "SQL", "Power BI", 
-    language === 'en' ? "Data Analysis" : (language === 'es' ? "Análisis de Datos" : "Análise de Dados")
+     language === 'en' ? "Data Analysis" : (language === 'es' ? "Análisis de Datos" : "Análise de Dados"),
+    "Python", "SQL", "Power BI", "Excel", "Fullstack", "JavaScript", "React", "Node.js"
   ];
   
   const getDegree = () => {
@@ -51,7 +51,7 @@ export const About = () => {
               </div>
             </div>
             <a 
-              href="/cv.pdf" 
+               target="_blank" href="CV-Gabriel.pdf"
               className="inline-flex items-center px-4 py-2 bg-secondary text-white font-medium rounded-lg hover:bg-secondary/90 transition-colors"
             >
               <FileText className="mr-2 h-4 w-4" /> {t('downloadCV')}

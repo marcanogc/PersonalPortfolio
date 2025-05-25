@@ -74,7 +74,7 @@ async function seed() {
         description_pt: "Sistema completo para gestão de instituições educacionais com autenticação JWT, dashboard administrativo e relatórios personalizados",
         category: "fullstack",
         imageUrl: "https://images.unsplash.com/photo-1588072432836-e10032774350",
-        technologies: ["Node.js", "Express", "React", "PostgreSQL", "JWT", "Material-UI"],
+        technologies: ["Node.js", "Express", "React", "MySQL", "JWT", "Material-UI"],
         githubUrl: "",
         demoUrl: "",
         createdAt: now
@@ -106,7 +106,7 @@ async function seed() {
         description_pt: "Aplicação completa com frontend React, backend Node.js/Express e banco de dados PostgreSQL para cadastro de usuários com autenticação JWT e validação de documentos",
         category: "fullstack",
         imageUrl: "https://images.unsplash.com/photo-1551650975-87deedd944c3",
-        technologies: ["React", "Node.js", "Express", "PostgreSQL", "JWT", "ViaCEP API", "CPF Validation"],
+        technologies: ["React", "Node.js", "Express", "SQLite", "JWT", "ViaCEP API", "CPF Hub.io"],
         githubUrl: "https://github.com/marcanogc/cadastro",
         demoUrl: "",
         createdAt: now

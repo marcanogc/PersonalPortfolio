@@ -37,14 +37,14 @@ export const heroTranslations: TranslationObject = {
     pt: "Olá, sou"
   },
   role: {
-    es: "Desarrollador Full Stack y Analista de Datos",
-    en: "Full Stack Developer & Data Analyst",
-    pt: "Desenvolvedor Full Stack e Data Analyst"
+    es: "Analista de Datos & BI | Python · SQL · Power BI",
+    en: "Data Analyst & BI | Python · SQL · Power BI",
+    pt: "Analista de Dados & BI | Python · SQL · Power BI"
   },
   description: {
-    es: "Creo soluciones digitales impactantes y funcionales que combinan diseño atractivo con código de calidad.",
-    en: "I create impactful and functional digital solutions that combine attractive design with quality code.",
-    pt: "Eu crio soluções digitais impactantes e funcionais que combinam design atraente com código de qualidade."
+    es: "Transformo datos en bruto en decisiones estratégicas a través de: ▸Análisis de Datos ▸BI ▸Modelado del comportamiento",
+    en: "I turn raw data into executable strategic decisions through: ▸Data Analysis ▸Business Intelligence ▸Behavioral modeling",
+    pt: "Transformo dados brutos em decisões estratégicas através de:  ▸Data Analysis ▸BI ▸Modelagem comportamental"
   },
   cta: {
     es: "Ver proyectos",
@@ -66,14 +66,14 @@ export const aboutTranslations: TranslationObject = {
     pt: "Sobre mim"
   },
   description: {
-    es: "Soy un desarrollador y analista de datos apasionado por crear soluciones digitales que marcan la diferencia. Me especializo en transformar ideas en productos funcionales y atractivos, combinando habilidades técnicas con una visión estratégica.",
-    en: "I am a developer and data analyst passionate about creating digital solutions that make a difference. I specialize in turning ideas into functional and attractive products, combining technical skills with a strategic vision.",
-    pt: "Sou um desenvolvedor e analista de dados apaixonado por criar soluções digitais que fazem a diferença. Especialista em transformar ideias em produtos funcionais e atraentes, combinando habilidades técnicas com visão estratégica."
+    es: "Soy Analista de Datos especializado en transformar desafíos complejos en insights estratégicos. Mi experiencia está en desvelar patrones ocultos en grandes volúmenes de datos, utilizando técnicas como modelado predictivo, análisis comportamental y visualización impactante.",
+    en: "I am a Data Analyst specialized in transforming complex challenges into strategic insights. My expertise lies in uncovering hidden patterns in large volumes of data, using techniques such as predictive modeling, behavioral analysis, and impactful visualization.",
+    pt: "Sou Analista de Dados especializado em transformar desafios complexos em insights estratégicos. Minha expertise está em desvendar padrões ocultos em grandes volumes de dados, utilizando técnicas como modelagem preditiva, análise comportamental e visualização impactante."
   },
   journey: {
-    es: "Mi camino profesional comenzó en el análisis de datos, donde aprendí a extraer valor de la información y a tomar decisiones basadas en evidencia. Hoy combino esa visión analítica con el desarrollo de software para crear productos que resuelven problemas reales.",
-    en: "My professional journey began in data analysis, where I learned to extract value from information and make evidence-based decisions. Today, I combine that analytical vision with software development to create products that solve real problems.",
-    pt: "Minha jornada profissional começou na análise de dados, onde aprendi a extrair valor das informações e tomar decisões baseadas em evidências. Hoje, combino essa visão analítica com o desenvolvimento de software para criar produtos que resolvem problemas reais."
+    es: "Mi trayectoria comenzó en el análisis de datos aplicado, donde aprendí a identificar problemas clave en datos en bruto y convertirlos en acciones concretas. Hoy, resuelvo cuestiones críticas como: Optimización de procesos (-18% de costos), toma de decisiones ágil (89% de precisión en modelos), estrategias basadas en evidencias (+22% de retención).",
+    en: "My journey began in applied data analysis, where I learned to identify key problems in raw data and turn them into concrete actions. Today, I solve critical issues such as: process optimization (-18% costs), agile decision-making (89% accuracy in models), evidence-based strategies (+22% retention).",
+    pt: "Minha jornada começou na análise de dados aplicada, onde aprendi a identificar problemas-chave em dados brutos e convertê-los em ações concretas. Hoje, resolvo questões críticas como: Otimização de processos (-18% custos), tomada de decisão ágil (89% acurácia em modelos), estratégias baseadas em evidências (+22% retenção)."
   },
   skills: {
     es: "Habilidades",
