@@ -51,7 +51,7 @@ export const About = () => {
               </div>
             </div>
             <a 
-               target="_blank" href="CV-Gabriel.pdf"
+               target="_blank" href="https://personalportfolio-v8hd.onrender.com/CV-Gabriel.pdf"
               className="inline-flex items-center px-4 py-2 bg-secondary text-white font-medium rounded-lg hover:bg-secondary/90 transition-colors"
             >
               <FileText className="mr-2 h-4 w-4" /> {t('downloadCV')}
