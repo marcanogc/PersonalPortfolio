@@ -30,7 +30,7 @@ export const Hero = () => {
           </div>
           <div className="md:w-1/2 mt-12 md:mt-0 flex justify-center">
             <img 
-              src="https://media.licdn.com/dms/image/v2/D4D03AQGLKOBRQpyr9g/profile-displayphoto-shrink_800_800/B4DZWuXWLTH4Ac-/0/1742387111149?e=1752105600&v=beta&t=dIAB7O3Dtqj9RxUewXMLQL6xpzoiVuPJWPXV7mZl-z0" 
+              src="/Gabriel.png"
               alt="Gabriel profile photo" 
               className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-primary dark:border-primary shadow-xl" 
             />

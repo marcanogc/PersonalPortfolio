@@ -14,6 +14,14 @@ export const Experience = () => {
     // Datos en español (default)
     const spanishData: ExperienceItemProps[] = [
       {
+        title: "Analista de Performance (Analytics)",
+        company: "Hospital Geral",
+        period: "2025 - Atual",
+        description: "Desarrollo cuadros de mando interactivos e informes estratégicos con Oracle SQL y Power BI, traduciendo datos operativos en información relevante para apoyar la toma de decisiones en diversas áreas de la organización.",
+        skills: ["SQL", "Power BI"],
+        type: "work"
+      },
+      {
         title: "Jefe de almacén (control de materiales)",
         company: "Marcopolo S.A.",
         period: "2024 - 2025",
@@ -49,6 +57,14 @@ export const Experience = () => {
     // Datos en inglés
     const englishData: ExperienceItemProps[] = [
       {
+        title: "Performance Analyst (Analytics)",
+        company: "Hospital Geral",
+        period: "2025 - Atual",
+        description: "I develop interactive dashboards and strategic reports with Oracle SQL and Power BI, translating operational data into relevant information to support decision-making in various areas of the institution.",
+        skills: ["SQL", "Power BI"],
+        type: "work"
+      },
+      {
         title: "Warehouse Manager (Materials Control)",
         company: "Marcopolo S.A.",
         period: "2024 - 2025",
@@ -83,6 +99,14 @@ export const Experience = () => {
 
     // Datos en portugués
     const portugueseData: ExperienceItemProps[] = [
+      {
+        title: "Analista de Performance (Analytics)",
+        company: "Hospital Geral",
+        period: "2025 - Atual",
+        description: "Desenvolvo dashboards interativos e relatórios estratégicos com Oracle SQL e Power BI, traduzindo dados operacionais em informações relevantes para apoiar a tomada de decisões em diversas áreas da instituição.",
+        skills: ["SQL", "Power BI"],
+        type: "work"
+      },
       {
         title: "Almoxarife (Controle de Materiais)",
         company: "Marcopolo S.A.",
