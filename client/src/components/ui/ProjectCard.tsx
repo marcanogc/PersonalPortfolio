@@ -37,10 +37,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
   // Obtener la etiqueta de categoría
   const getCategoryLabel = (cat: string): string => {
     switch (cat) {
-      case "web": return t('web');
-      case "bi": return t('bi');
-      case "backend": return t('backend');
-      case "dados": return t('dados');
+      case "Business Intelligence": return t('businessIntelligence');
+      case "Data Science": return t('dataScience');
+      case "Machine Learning": return t('machineLearning');
+      case "Deep Learning": return t('deepLearning');
       default: return cat;
     }
   };

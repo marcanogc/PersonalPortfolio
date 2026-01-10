@@ -38,8 +38,13 @@ export const projectInsertSchema = createInsertSchema(projects, {
   name: (schema) => schema.min(2, "Project name must be at least 2 characters"),
   description: (schema) => schema.min(10, "Description must be at least 10 characters"),
   category: (schema) => schema.refine(
-    val => ["web", "bi", "backend", "dados"].includes(val),
-    "Category must be one of: web, bi, backend, dados"
+    val => [
+      "Business Intelligence",
+      "Data Science",
+      "Machine Learning",
+      "Deep Learning"
+    ].includes(val),
+    "Category must be one of: Business Intelligence, Data Science, Machine Learning, Deep Learning"
   ),
   technologies: (schema) => z.array(z.string()).min(1, "At least one technology is required")
 });

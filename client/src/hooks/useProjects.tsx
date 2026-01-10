@@ -1,7 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 
-export type ProjectCategory = "fullstack" | "bi" | "data" | "all";
+export type ProjectCategory =
+  | "all"
+  | "Business Intelligence"
+  | "Data Science"
+  | "Machine Learning"
+  | "Deep Learning";
 
 export interface Project {
   id: number;
@@ -23,15 +28,16 @@ export function useProjects() {
     queryKey: ['/api/projects'],
   });
   
-  const filteredProjects = projects.filter((project: Project) => 
+  const filteredProjects = projects.filter((project: Project) =>
     currentCategory === "all" || project.category === currentCategory
   );
 
   const categories = [
     { id: "all", label: { es: "Todos", en: "All", pt: "Todos" } },
-    { id: "fullstack", label: { es: "Fullstack", en: "Fullstack", pt: "Fullstack" } },
-    { id: "bi", label: { es: "BI", en: "BI", pt: "BI" } },
-    { id: "data", label: { es: "Datos", en: "Data", pt: "Dados" } }
+    { id: "Business Intelligence", label: { es: "Inteligencia de Negocios", en: "Business Intelligence", pt: "Business Intelligence" } },
+    { id: "Data Science", label: { es: "Ciencia de Datos", en: "Data Science", pt: "Data Science" } },
+    { id: "Machine Learning", label: { es: "Aprendizaje Automático", en: "Machine Learning", pt: "Machine Learning" } },
+    { id: "Deep Learning", label: { es: "Deep Learning", en: "Deep Learning", pt: "Deep Learning" } }
   ];
 
   return {

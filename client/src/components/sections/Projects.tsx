@@ -21,9 +21,10 @@ export const Projects = () => {
   // Mapeamos los IDs de categoría a las claves de traducción
   const categoryToTranslationKey: Record<string, string> = {
     'all': 'allCategories',
-    'fullstack': 'fullstack',
-    'bi': 'bi',
-    'data': 'data'
+    'Business Intelligence': 'businessIntelligence',
+    'Data Science': 'dataScience',
+    'Machine Learning': 'machineLearning',
+    'Deep Learning': 'deepLearning'
   };
 
   useEffect(() => {
@@ -59,7 +60,13 @@ export const Projects = () => {
         {/* Project Filters */}
         <div className="mb-8 flex flex-wrap justify-center gap-4">
           {categories
-            .filter(category => ['all', 'fullstack', 'bi', 'data'].includes(category.id))
+            .filter(category => [
+              'all',
+              'Business Intelligence',
+              'Data Science',
+              'Machine Learning',
+              'Deep Learning'
+            ].includes(category.id))
             .map(category => (
               <Button
                 key={category.id}

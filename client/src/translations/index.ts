@@ -114,20 +114,25 @@ export const projectsTranslations: TranslationObject = {
     en: "All",
     pt: "Todos"
   },
-  fullstack: {
-    es: "Fullstack",
-    en: "Fullstack",
-    pt: "Fullstack"
+  businessIntelligence: {
+    es: "Inteligencia de Negocios",
+    en: "Business Intelligence",
+    pt: "Business Intelligence"
   },
-  bi: {
-    es: "BI",
-    en: "BI",
-    pt: "BI"
+  dataScience: {
+    es: "Ciencia de Datos",
+    en: "Data Science",
+    pt: "Data Science"
   },
-  data: {
-    es: "Datos",
-    en: "Data",
-    pt: "Dados"
+  machineLearning: {
+    es: "Aprendizaje Automático",
+    en: "Machine Learning",
+    pt: "Machine Learning"
+  },
+  deepLearning: {
+    es: "Deep Learning",
+    en: "Deep Learning",
+    pt: "Deep Learning"
   },
   loading: {
     es: "Cargando proyectos...",
