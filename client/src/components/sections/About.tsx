@@ -58,7 +58,7 @@ export const About = () => {
             </a>
             {/* Botón para historia personal */}
             <a
-              href="https://tree-whale-a25.notion.site/Gabriel-Marcano-16dbf5073b6980e184b3c38716fbaa5e"
+              href="https://gabriel-marcano-analytics.notion.site/Gabriel-Marcano-16dbf5073b6980e184b3c38716fbaa5e"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-4 py-2 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors ml-4 mt-4"

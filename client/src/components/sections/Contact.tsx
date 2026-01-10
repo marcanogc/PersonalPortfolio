@@ -202,7 +202,7 @@ export const Contact = () => {
                 <a href="https://x.com/gabriel_marcano" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary text-2xl" target="_blank" rel="noopener noreferrer">
                   <Twitter className="w-6 h-6" />
                 </a>
-                <a href="https://tree-whale-a25.notion.site/Gabriel-Marcano-16dbf5073b6980e184b3c38716fbaa5e" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary text-2xl" target="_blank" rel="noopener noreferrer">
+                <a href="https://gabriel-marcano-analytics.notion.site/Gabriel-Marcano-16dbf5073b6980e184b3c38716fbaa5e" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary text-2xl" target="_blank" rel="noopener noreferrer">
                   <FileCode className="w-6 h-6" />
                 </a>
               </div>
