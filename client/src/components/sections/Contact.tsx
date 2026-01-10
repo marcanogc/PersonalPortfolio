@@ -185,7 +185,7 @@ export const Contact = () => {
                 </li>
                 <li className="flex items-start">
                   <Phone className="text-primary dark:text-primary mt-1 w-6 h-6" />
-                  <span className="ml-2 text-gray-700 dark:text-gray-300">+55 (54) 99297-7691</span>
+                  <span className="ml-2 text-gray-700 dark:text-gray-300">+55 (54) 99336-7540</span>
                 </li>
               </ul>
             </div>
