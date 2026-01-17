@@ -153,7 +153,7 @@ export const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows={5}
+                  rows={7}
                   className="form__input"
                   placeholder={`${t('message')}...`}
                   required
