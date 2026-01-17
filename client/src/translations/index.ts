@@ -42,9 +42,9 @@ export const heroTranslations: TranslationObject = {
     pt: "Analista de Dados & BI | Python · SQL · Power BI"
   },
   description: {
-    es: "Transformo datos en bruto en decisiones estratégicas a través de: ▸Análisis de Datos ▸BI ▸Modelado del comportamiento",
-    en: "I turn raw data into executable strategic decisions through: ▸Data Analysis ▸Business Intelligence ▸Behavioral modeling",
-    pt: "Transformo dados brutos em decisões estratégicas através de:  ▸Data Analysis ▸BI ▸Modelagem comportamental"
+    es: "Transformo datos en bruto en decisiones estratégicas a través de: ▸Análisis de Datos ▸BI ▸Modelado estratégico",
+    en: "I turn raw data into executable strategic decisions through: ▸Data Analysis ▸Business Intelligence ▸Modeling",
+    pt: "Transformo dados brutos em decisões estratégicas através de:  ▸Data Analysis ▸BI ▸Modelagem estratégica"
   },
   cta: {
     es: "Ver proyectos",
@@ -66,15 +66,15 @@ export const aboutTranslations: TranslationObject = {
     pt: "Sobre mim"
   },
   description: {
-    es: "Soy Analista de Datos especializado en transformar desafíos complejos en insights estratégicos. Mi experiencia está en desvelar patrones ocultos en grandes volúmenes de datos, utilizando técnicas como modelado predictivo, análisis comportamental y visualización impactante.",
-    en: "I am a Data Analyst specialized in transforming complex challenges into strategic insights. My expertise lies in uncovering hidden patterns in large volumes of data, using techniques such as predictive modeling, behavioral analysis, and impactful visualization.",
-    pt: "Sou Analista de Dados especializado em transformar desafios complexos em insights estratégicos. Minha expertise está em desvendar padrões ocultos em grandes volumes de dados, utilizando técnicas como modelagem preditiva, análise comportamental e visualização impactante."
+    es: "Soy <strong>Analista de Datos</strong> con foco en transformar desafíos complejos en <strong>información clara, confiable y útil para la toma de decisiones</strong>. Me especializo en analizar, organizar y visualizar datos para apoyar áreas operativas e institucionales en el seguimiento de indicadores clave de desempeño y resultados.",
+    en: "I am a <strong>Data Analyst</strong> focused on transforming complex challenges into <strong>clear, reliable, and actionable insights</strong> for decision-making. I specialize in analyzing, organizing, and visualizing data to support operational and institutional areas in tracking key performance indicators and results.",
+    pt: "Sou <strong>Analista de Dados</strong> com foco em transformar desafios complexos em <strong>informações claras, confiáveis e úteis para a tomada de decisão</strong>. Atuo na análise, organização e visualização de dados, apoiando áreas operacionais e institucionais no acompanhamento de indicadores e resultados."
   },
   journey: {
-    es: "Mi trayectoria comenzó en el análisis de datos aplicado, donde aprendí a identificar problemas clave en datos en bruto y convertirlos en acciones concretas. Hoy, resuelvo cuestiones críticas como: Optimización de procesos (-18% de costos), toma de decisiones ágil (89% de precisión en modelos), estrategias basadas en evidencias (+22% de retención).",
-    en: "My journey began in applied data analysis, where I learned to identify key problems in raw data and turn them into concrete actions. Today, I solve critical issues such as: process optimization (-18% costs), agile decision-making (89% accuracy in models), evidence-based strategies (+22% retention).",
-    pt: "Minha jornada começou na análise de dados aplicada, onde aprendi a identificar problemas-chave em dados brutos e convertê-los em ações concretas. Hoje, resolvo questões críticas como: Otimização de processos (-18% custos), tomada de decisão ágil (89% acurácia em modelos), estratégias baseadas em evidências (+22% retenção)."
-  },
+      es: "Tengo experiencia trabajando con grandes volúmenes de datos, identificando patrones relevantes, inconsistencias y oportunidades de mejora. Utilizo herramientas como Python, SQL y Power BI para generar <strong>insights prácticos y accionables</strong>, siempre orientados al contexto del negocio y a la realidad operacional.\n\nMi trayectoria comenzó en el análisis de datos aplicado, donde desarrollé la capacidad de transformar datos en bruto en acciones concretas. A lo largo del camino, he contribuido a resolver cuestiones críticas como:\n\n▸ Optimización de procesos, con reducciones de costos de hasta el 18%\n▸ Apoyo a la toma de decisiones mediante indicadores confiables y bien estructurados\n▸ Estrategias basadas en evidencia, con impacto medible en los resultados.\n\nActualmente, trabajo en <strong>entornos de alta criticidad operacional</strong>, donde la calidad de la información, la consistencia de los datos y la claridad de los indicadores son esenciales para las decisiones estratégicas.",
+      en: "I have experience working with large volumes of data, identifying relevant patterns, inconsistencies, and opportunities for improvement. I use tools such as Python, SQL, and Power BI to generate <strong>practical and actionable insights</strong>, always oriented to the business context and operational reality.\n\nMy journey began in applied data analysis, where I developed the ability to transform raw data into concrete actions. Along the way, I have contributed to solving critical issues such as:\n\n▸ Process optimization, with cost reductions of up to 18%\n▸ Support for decision-making through reliable and well-structured indicators\n▸ Evidence-based strategies, with measurable impact on results.\n\nCurrently, I work in <strong>high operational criticality environments</strong>, where information quality, data consistency, and indicator clarity are essential for strategic decisions.",
+      pt: "Tenho experiência no trabalho com grandes volumes de dados, identificando padrões relevantes, inconsistências e oportunidades de melhoria. Utilizo ferramentas como Python, SQL e Power BI para gerar <strong>insights práticos e acionáveis</strong>, sempre orientados ao contexto do negócio e à realidade operacional.\n\nMinha jornada começou na análise de dados aplicada, onde desenvolvi a capacidade de transformar dados brutos em ações concretas. Ao longo do caminho, contribuí para a resolução de questões críticas como:\n\n▸ Otimização de processos, com redução de custos de até 18%\n▸ Apoio à tomada de decisão por meio de indicadores confiáveis e bem estruturados\n▸ Estratégias baseadas em evidências, com impacto mensurável nos resultados.\n\nAtualmente, atuo em <strong>ambientes de alta criticidade operacional</strong>, onde a qualidade da informação, a consistência dos dados e a clareza dos indicadores são essenciais para decisões estratégicas."
+    },
   skills: {
     es: "Habilidades",
     en: "Skills",
@@ -115,17 +115,17 @@ export const projectsTranslations: TranslationObject = {
     pt: "Todos"
   },
   businessIntelligence: {
-    es: "Inteligencia de Negocios",
+    es: "Business Intelligence",
     en: "Business Intelligence",
     pt: "Business Intelligence"
   },
   dataScience: {
-    es: "Ciencia de Datos",
+    es: "Data Science",
     en: "Data Science",
     pt: "Data Science"
   },
   machineLearning: {
-    es: "Aprendizaje Automático",
+    es: "Machine Learning",
     en: "Machine Learning",
     pt: "Machine Learning"
   },

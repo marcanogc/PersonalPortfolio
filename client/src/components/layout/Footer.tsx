@@ -7,7 +7,7 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <div className="text-xl font-bold text-white">Gabriel Marcano</div>
-            <p className="text-gray-400 mt-2">Desenvolvedor e Analista de Dados</p>
+            <p className="text-gray-400 mt-2">Data Analyst & BI</p>
           </div>
           
           <div className="flex flex-col md:flex-row items-center md:space-x-8">

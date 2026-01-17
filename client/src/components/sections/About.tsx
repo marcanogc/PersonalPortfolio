@@ -2,6 +2,7 @@ import { FileText, MapPin, Mail, GraduationCap, Languages, Github, Linkedin, Twi
 import { useTranslation } from "@/hooks/useLanguage";
 import { aboutTranslations } from "@/translations";
 import { useLanguage } from "@/hooks/useLanguage";
+import { l } from "node_modules/vite/dist/node/types.d-aGj9QkWt";
 
 export const About = () => {
   const { t } = useTranslation(aboutTranslations);
@@ -9,9 +10,18 @@ export const About = () => {
 
   // Personalizar contenido según el idioma
   const getSkills = () => [
-     language === 'en' ? "Data Analysis" : (language === 'es' ? "Análisis de Datos" : "Análise de Dados"),
-    "Python", "SQL", "Power BI", "Excel", "Fullstack", "JavaScript", "React", "Node.js"
+     language === 'en' ? "Data Analysis" : (language === 'es' ? "Análisis de Datos" : "Análise de Dados"), language === 'en' ? "BI" : (language === 'es' ? "Inteligencia de Negocios" : "BI"),
+     language === 'en' ? "Dashboards & KPIs" : (language === 'es' ? "Dashboards y KPIs" : "Dashboards e KPIs"),
+     language === 'en' ? "Python" : "Python",
+     language === 'en' ? "SQL" : "SQL",
+     language === 'en' ? "Power BI" : "Power BI",
+     language === 'en' ? "ETL" : "ETL",
+     language === 'en' ? "Data Modeling" : (language === 'es' ? "Modelado de Datos" : "Modelagem de Dados"),
+     language === 'en' ? "DAX" : "DAX",
+     language === 'en' ? "Machine Learning" : (language === 'es' ? "Aprendizaje Automático" : "Machine Learning"),
+     language === 'en' ? "Forecasting" : (language === 'es' ? "Pronósticos" : "Forecasting")
   ];
+
   
   const getDegree = () => {
     switch (language) {

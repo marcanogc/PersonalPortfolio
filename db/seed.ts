@@ -1,5 +1,5 @@
-import { db } from "./index";
-import { projects } from "@shared/schema";
+import { db } from "./index.js";
+import { projects } from "../shared/schema.js";
 
 async function seed() {
   try {
@@ -13,22 +13,7 @@ async function seed() {
     // Proyectos actualizados
     const now = new Date().toISOString();
     const projectsData = [
-      {
-        name: "Análise de Market Basket Analysis",
-        description: "Segmentação comportamental para estratégias de upsell. Impacto: +22% retenção de clientes | +10% vendas recorrentes.",
-        name_es: "Análisis de Market Basket",
-        name_en: "Market Basket Analysis",
-        name_pt: "Análise de Market Basket Analysis",
-        description_es: "Segmentación conductual para estrategias de upsell. Impacto: +22% retención de clientes | +10% ventas recurrentes.",
-        description_en: "Behavioral segmentation for upsell strategies. Impact: +22% customer retention | +10% recurring sales.",
-        description_pt: "Segmentação comportamental para estratégias de upsell. Impacto: +22% retenção de clientes | +10% vendas recorrentes.",
-        category: "Business Intelligence",
-        imageUrl: "/Market.png",
-        technologies: ["Python", "Machine Learning", "SQL", "Power BI", "Pandas", "Scikit-learn", "Data Analysis"],
-        githubUrl: "https://github.com/marcanogc/Recuperacao-de-Clientes-com-Market-Basket-Analysis",
-        reportUrl: "https://www.notion.so/An-lise-de-Dados-com-a-Metodologia-de-Market-Basket-Analysis-188bf5073b6980009a8dfe21ec119f9a",
-        createdAt: now
-      },
+
       {
         name: "Projetos de Análise de Dados e BI",
         description: "Dashboards executivos com alertas em tempo real em diversas áreas: Logística, Controle de Estoque, Controle Financeiro, Comercial, Orçamentário, Gestão de Vendas e Fluxo de Caixa. Insight chave: 70% de melhoria na eficiência operacional. Impacto: 25% redução nos custos operacionais.",
@@ -45,20 +30,20 @@ async function seed() {
         demoUrl: "https://www.notion.so/16dbf5073b698001ac37df0757033f87",
         createdAt: now
       },
-      {
-        name: "Forecasting de Vendas com IA e Streamlit",
-        description: "Pipeline completo de previsão temporal: desde dados brutos até uma aplicação em produção. Inclui engenharia de variáveis temporais, lags, análise de Black Friday e treinamento de HistGradientBoostingRegressor. Impacto: +80% precisão nas previsões de vendas mensais.",
-        name_es: "Forecasting de Ventas con IA y Streamlit",
-        name_en: "Forecasting Sales with AI and Streamlit",
-        name_pt: "Forecasting de Vendas com IA e Streamlit",
-        description_es: "Pipeline completo de previsión temporal: desde datos en bruto hasta una aplicación en producción. Incluye ingeniería de variables temporales, lags, análisis de Black Friday y entrenamiento de HistGradientBoostingRegressor. Impacto: +80% precisión en las previsiones de ventas mensuales.",
-        description_en: "Complete time series forecasting pipeline: from raw data to a production application. Includes temporal feature engineering, lags, Black Friday analysis, and training of HistGradientBoostingRegressor. Impact: +80% accuracy in monthly sales forecasts.",
-        description_pt: "Pipeline completo de previsão temporal: desde dados brutos até uma aplicação em produção. Inclui engenharia de variáveis temporais, lags, análise de Black Friday e treinamento de HistGradientBoostingRegressor. Impacto: +80% precisão nas previsões de vendas mensais.",
-        category: "Data Science",
-        imageUrl: "/Forecasting.jpg",
-        technologies: ["Python", "Scikit-Learn", "Seaborn", "Streamlit", "Holidays", "Pandas", "NumPy", "Matplotlib", "Forecasting", "Time Series", "ETL", "HistGradientBoostingRegressor"],
-        githubUrl: "https://github.com/marcanogc/Forecasting",
-        demoUrl: "https://simula-venda.streamlit.app/",
+            {
+        name: "Análise de Market Basket Analysis",
+        description: "Análise de padrões de consumo para estratégias de upsell baseadas em dados. Impacto: +22% retenção de clientes | +10% vendas recorrentes.",
+        name_es: "Análisis de Market Basket",
+        name_en: "Market Basket Analysis",
+        name_pt: "Análise de Market Basket Analysis",
+        description_es: "Análisis de patrones de consumo para estrategias de upsell basadas en datos. Impacto: +22% retención de clientes | +10% ventas recurrentes.",
+        description_en: "Analysis of consumption patterns for data-driven upsell strategies. Impact: +22% customer retention | +10% recurring sales.",
+        description_pt: "Análise de padrões de consumo para estratégias de upsell baseadas em dados. Impacto: +22% retenção de clientes | +10% vendas recorrentes.",
+        category: "Business Intelligence",
+        imageUrl: "/Market.png",
+        technologies: ["Python", "Machine Learning", "SQL", "Power BI", "Pandas", "Scikit-learn", "Data Analysis"],
+        githubUrl: "https://github.com/marcanogc/Recuperacao-de-Clientes-com-Market-Basket-Analysis",
+        reportUrl: "https://www.notion.so/An-lise-de-Dados-com-a-Metodologia-de-Market-Basket-Analysis-188bf5073b6980009a8dfe21ec119f9a",
         createdAt: now
       },
       {
@@ -75,6 +60,22 @@ async function seed() {
         technologies: ["Python", "Pandas", "Scikit-Learn", "XGBoost", "Imbalanced-Learn", "Flask"],
         githubUrl: "",
         demoUrl: "",
+        createdAt: now
+      },
+      {
+        name: "Forecasting de Vendas com IA e Streamlit",
+        description: "Pipeline completo de previsão temporal: desde dados brutos até uma aplicação em produção. Inclui engenharia de variáveis temporais, lags, análise de Black Friday e treinamento de HistGradientBoostingRegressor. Impacto: +80% precisão nas previsões de vendas mensais.",
+        name_es: "Forecasting de Ventas con IA y Streamlit",
+        name_en: "Forecasting Sales with AI and Streamlit",
+        name_pt: "Forecasting de Vendas com IA e Streamlit",
+        description_es: "Pipeline completo de previsión temporal: desde datos en bruto hasta una aplicación en producción. Incluye ingeniería de variables temporales, lags, análisis de Black Friday y entrenamiento de HistGradientBoostingRegressor. Impacto: +80% precisión en las previsiones de ventas mensuales.",
+        description_en: "Complete time series forecasting pipeline: from raw data to a production application. Includes temporal feature engineering, lags, Black Friday analysis, and training of HistGradientBoostingRegressor. Impact: +80% accuracy in monthly sales forecasts.",
+        description_pt: "Pipeline completo de previsão temporal: desde dados brutos até uma aplicação em produção. Inclui engenharia de variáveis temporais, lags, análise de Black Friday e treinamento de HistGradientBoostingRegressor. Impacto: +80% precisão nas previsões de vendas mensais.",
+        category: "Data Science",
+        imageUrl: "/Forecasting.jpg",
+        technologies: ["Python", "Scikit-Learn", "Seaborn", "Streamlit", "Holidays", "Pandas", "NumPy", "Matplotlib", "Forecasting", "Time Series", "ETL", "HistGradientBoostingRegressor"],
+        githubUrl: "https://github.com/marcanogc/Forecasting",
+        demoUrl: "https://simula-venda.streamlit.app/",
         createdAt: now
       },
       {

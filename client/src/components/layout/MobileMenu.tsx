@@ -31,7 +31,7 @@ export const MobileMenu = ({ isOpen, navItems, onClose }: MobileMenuProps) => {
         
         {/* Selector de idioma en el menú móvil */}
         <div className="py-4 border-t border-gray-200 dark:border-gray-800">
-          <p className="text-sm mb-2 text-muted-foreground">Idioma / Language / Língua</p>
+          <p className="text-sm mb-2 text-muted-foreground">Língua / Idioma / Language</p>
           <LanguageSelector className="justify-start" />
         </div>
       </div>

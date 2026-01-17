@@ -210,6 +210,8 @@ export const Contact = () => {
               <img 
                 src="https://cdn.pixabay.com/photo/2018/01/06/07/53/social-3064515_1280.jpg" 
                 alt="Developer workspace illustration" 
+                width={300}
+                height={200}
                 className="w-full h-auto rounded-lg mt-6" 
               />
             </div>
