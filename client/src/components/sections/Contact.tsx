@@ -208,7 +208,7 @@ export const Contact = () => {
               </div>
               
               <img 
-                src="/social-3064515_640.jpg" 
+                src="/social-3064515_641.jpg" 
                 alt="Media social" 
                 className="w-auto h-auto rounded-lg mt-6" 
               />
