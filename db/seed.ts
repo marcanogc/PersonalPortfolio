@@ -27,7 +27,7 @@ async function seed() {
         imageUrl: "/All-Dahboard.png",
         technologies: ["SQL", "Power BI", "Excel", "Tableau", "ETL", "Data Visualization", "DAX", "Dashboards"],
         githubUrl: "",
-        demoUrl: "https://www.notion.so/16dbf5073b698001ac37df0757033f87",
+        docsUrl: "https://www.notion.so/16dbf5073b698001ac37df0757033f87",
         createdAt: now
       },
             {

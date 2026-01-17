@@ -155,9 +155,9 @@ export const projectsTranslations: TranslationObject = {
     pt: "Ver código"
   },
   viewDemo: {
-    es: "Ver demo",
-    en: "View demo",
-    pt: "Ver demo"
+    es: "Ver App",
+    en: "View App",
+    pt: "Ver App"
   },
   viewReport: {
     es: "Ver informe",
