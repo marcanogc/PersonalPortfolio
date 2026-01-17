@@ -208,11 +208,9 @@ export const Contact = () => {
               </div>
               
               <img 
-                src="https://www.thebusinesstoolkit.com/wp-content/uploads/2023/04/social-media-blocks.jpeg" 
-                alt="Media Social" 
-                width={300}
-                height={200}
-                className="w-[300px] h-[200px] rounded-lg mt-6" 
+                src="ttps://cdn.pixabay.com/photo/2018/01/06/07/53/social-3064515_128h0.jpg" 
+                alt="Media social" 
+                className="w-auto h-auto rounded-lg mt-6" 
               />
             </div>
           </div>
